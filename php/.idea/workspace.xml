@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fbd8600f-8ec4-484e-aae7-bd66aa20f1a1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WhLBGhiexXjW97Em2s16SpPTpM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programmes\Wampp\www\php\modele" />
+      <recent name="D:\Programmes\Wampp\www\php\public\css" />
+      <recent name="D:\Programmes\Wampp\www\php\view" />
+      <recent name="D:\Programmes\Wampp\www\php\modele\utils" />
+      <recent name="D:\Programmes\Wampp\www\php\modele\Utils" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fbd8600f-8ec4-484e-aae7-bd66aa20f1a1" name="Default Changelist" comment="" />
+      <created>1579596742653</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579596742653</updated>
+      <workItem from="1579596743782" duration="3944000" />
+      <workItem from="1579708077877" duration="3093000" />
+      <workItem from="1579772349553" duration="55000" />
+      <workItem from="1579772547181" duration="5962000" />
+      <workItem from="1579781885886" duration="59000" />
+      <workItem from="1579787221797" duration="3186000" />
+      <workItem from="1579852430117" duration="1925000" />
+      <workItem from="1579942653486" duration="5188000" />
+      <workItem from="1580056066519" duration="3604000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="305" key="#com.intellij.ide.util.MemberChooser" timestamp="1580057355681">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="0" y="305" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1580057355681" />
+    <state x="499" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579947220794">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1579947220794" />
+    <state x="615" y="482" key="NewPhpClassDialog" timestamp="1580056795270">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="615" y="482" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1580056795270" />
+    <state x="604" y="365" key="NewPhpFileDialog" timestamp="1579854761535">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="604" y="365" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1579854761535" />
+    <state x="279" y="78" key="SettingsEditor" timestamp="1579596750351">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="279" y="78" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1579596750351" />
+    <state x="477" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1580056204603">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="477" y="261" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1580056204603" />
+    <state x="456" y="186" key="search.everywhere.popup" timestamp="1579596843527">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="456" y="186" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1579596843527" />
+  </component>
+</project>
