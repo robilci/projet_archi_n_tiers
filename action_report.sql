@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 04 fév. 2020 à 22:02
+-- Généré le :  Dim 09 fév. 2020 à 12:54
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `adresse`;
 CREATE TABLE IF NOT EXISTS `adresse` (
-  `Adresse_Id` int(11) NOT NULL,
+  `Adresse_Id` int(11) NOT NULL AUTO_INCREMENT,
   `Numero` varchar(10) NOT NULL,
   `Rue` varchar(30) NOT NULL,
   `Code_Postal` int(11) NOT NULL,
