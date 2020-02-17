@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Route.php';
+require_once 'RouterException.php';
 
 /**
  * Class Router
@@ -73,7 +74,7 @@ class Router
 
     public static function url($name, $params = []){
         if(!isset(static::$namedRoutes[$name])){
-            throw new RouteurException('No route matching this route name');
+            throw new RouterException('No route matching this route name');
         }
 
         return static::$namedRoutes[$name]->getUrl($params);
@@ -81,7 +82,7 @@ class Router
 
     /**
      * @return mixed - Check if the route exists and retrieve the parameters if necessary
-     * @throws RouteurException - Return an error if the route does not exist
+     * @throws RouterException - Return an error if the route does not exist
      */
     public function run(){
         if(!isset($this->routes[$_SERVER['REQUEST_METHOD']])){
@@ -96,6 +97,6 @@ class Router
             }
         }
 
-        throw new RouteurException('No matching route');
+        throw new RouterException('No matching route');
     }
 }
