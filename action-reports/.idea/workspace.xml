@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="429da9e6-df28-423c-9b88-5fa711455bd8" name="Default Changelist" comment="" />
+    <list default="true" id="429da9e6-df28-423c-9b88-5fa711455bd8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../api/synchronization_module/Synchronization.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/synchronization_module/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../api/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -81,6 +87,7 @@
       <workItem from="1580824104378" duration="225000" />
       <workItem from="1581008153871" duration="4148000" />
       <workItem from="1581933068434" duration="101000" />
+      <workItem from="1581949833598" duration="105000" />
     </task>
     <servers />
   </component>
