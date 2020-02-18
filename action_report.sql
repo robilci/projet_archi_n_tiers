@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   `Code_Postal` int(11) NOT NULL,
   `Commune` varchar(10) NOT NULL,
   PRIMARY KEY (`Adresse_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `droit` (
   `Droit_ID` int(11) NOT NULL,
   `Description` varchar(30) NOT NULL,
   PRIMARY KEY (`Droit_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `intervention` (
   KEY `Adresse_ID` (`Adresse_ID`),
   KEY `Type_ID` (`Type_ID`),
   KEY `Responsable_ID` (`Responsable_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `intervention_vehicule` (
   `Date_Retour` datetime NOT NULL,
   PRIMARY KEY (`Vehicule_Code`,`Intervention_ID`),
   KEY `Intervention_ID` (`Intervention_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `pompier` (
   `Droit_ID` int(11) NOT NULL,
   PRIMARY KEY (`Pompier_ID`),
   KEY `Droit_ID` (`Droit_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `pompier_roles` (
   KEY `Vehicule_Code` (`Vehicule_Code`),
   KEY `Intervention_ID` (`Intervention_ID`),
   KEY `Role_ID` (`Role_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `requerant` (
   `Requerant_ID` int(11) NOT NULL,
   `Description` varchar(64) NOT NULL,
   PRIMARY KEY (`Requerant_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   `Role_ID` int(11) NOT NULL,
   `Role_Name` varchar(25) NOT NULL,
   PRIMARY KEY (`Role_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `type_intervention` (
   `TI_Code` varchar(5) NOT NULL,
   `Description` varchar(30) NOT NULL,
   PRIMARY KEY (`TI_Code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `vehicule` (
   `Description` varchar(60) NOT NULL,
   `NbPlaces_Dispo` int(11) NOT NULL,
   PRIMARY KEY (`Vehicule_Code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -194,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `vehicule_role` (
   `Role_ID` int(11) NOT NULL,
   PRIMARY KEY (`vehicule_Code`,`Role_ID`),
   KEY `Role_ID` (`Role_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
