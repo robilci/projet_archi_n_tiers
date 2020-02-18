@@ -10,6 +10,7 @@ class Synchronization
     private $db_pass;
     private $db_host;
     private $db_name;
+    private $db_port;
 
     public function __construct()
     {
@@ -18,11 +19,11 @@ class Synchronization
         $this->db_pass = $this->settings['db_pass'];
         $this->db_host = $this->settings['db_host'];
         $this->db_name = $this->settings['db_name'];
+        $this->db_port = $this->settings['db_port'];
 
         try {
-            $this->actionReportConn = new PDO('mysql:dbame='. $this->db_name .';host='. $this->db_host, $this->db_user, $this->db_pass);
+            $this->actionReportConn = new PDO('mysql:host='. $this->db_host .';port='. $this->db_port .';dbname='. $this->db_name, $this->db_user, $this->db_pass);
             $this->actionReportConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->actionReportConn->query("SELECT * FROM droit");
         } catch (Exception $e){
             print_r($e->getMessage());
         }
@@ -41,7 +42,7 @@ class Synchronization
             $valueLine = ' ("'. $results[$i]['F_ID'] .'", "'. $results[$i]["F_LIBELLE"]. '")';
         }
         $sql = $sql . $valueLine . ";";
-        $this->actionReportConn->query("SELECT * FROM droit");
-        $this->actionReportConn->close();
+        $sql = mb_convert_encoding($sql, "UTF-8", "latin1");
+        $this->actionReportConn->query($sql);
     }
 }
