@@ -4,6 +4,7 @@ require_once(dirname(__DIR__) . "/database/Database.php");
 require_once("exception/EmptyArrayKeyException.php");
 require_once("exception/NoTableSpecifiedException.php");
 require_once("exception/NullSelectionException.php");
+require_once("exception/KeysNumberNotEqualException.php");
 
 class Synchronization
 {
@@ -32,9 +33,31 @@ class Synchronization
         }
     }
 
-    public function getRights()
+    public function run(){
+        $this->copyRights();
+        $this->copyRoles();
+        $this->copyFireFighters();
+        $this->copyVehicules();
+    }
+
+    private function copyRights()
     {
-        $this->copyInsert("fonctionnalite", "droit", ["F_ID", "F_LIBELLE"], ["Droit_ID, Description"]);
+        $this->copyInsert("fonctionnalite", "droit", ["F_ID", "F_LIBELLE"], ["Droit_ID", "Description"]);
+    }
+
+    private function copyRoles()
+    {
+        $this->copyInsert("type_participation", "role", ["TP_ID", "TP_LIBELLE"], ["Role_ID", "Name"]);
+    }
+
+    private function copyFireFighters()
+    {
+        $this->copyInsert("pompier", "pompier", ["P_ID", "P_PRENOM", "P_NOM"], ["Pompier_ID", "Prenom", "Nom"]);
+    }
+
+    private function copyVehicules()
+    {
+        $this->copyInsert("type_vehicule", "vehicule", ["TV_CODE", "TV_LIBELLE", "TV_NB"], ["Vehicule_Code", "Description", "NbPlaces_Dispo"]);
     }
 
     private function copyInsert($sourceTable, $destinationTable, $sourceKeys, $destinationKeys)
@@ -46,6 +69,11 @@ class Synchronization
 
         if ($sourceTable == "" || $destinationTable == "")
             throw new NoTableSpecifiedException('No destination or source table specified');
+
+        if ($sourceKeysSize != $destKeysSize)
+            throw new KeysNumberNotEqualException('Number of keys in both keys array are not equal');
+
+        $this->actionReportConn->query("DELETE FROM ".$destinationTable);
 
         $sql ='SELECT ' . $sourceKeys[0];
         for ($i = 1; $i < $sourceKeysSize; $i++) {
@@ -60,7 +88,7 @@ class Synchronization
 
         $sql = 'INSERT INTO ' . $destinationTable . ' (' . $destinationKeys[0];
         for ($i = 1; $i < $destKeysSize; $i++) {
-            $sql = $sql . ',';
+            $sql = $sql .", ". $destinationKeys[$i];
         }
         $sql = $sql. ') VALUES ';
 
@@ -81,20 +109,5 @@ class Synchronization
         }
 
         $this->actionReportConn->query($sql);
-
-        /*for ($i = 1; $i < sizeof($results); $i++) {
-            $sql = $sql . $valueLine . ",";
-            $valueLine = ' ("' . $results[$i]['F_ID'] . '", "' . $results[$i]["F_LIBELLE"] . '")';
-        }
-
-        /*$valueLine = ' ("' . $results[0]['F_ID'] . '", "' . $results[0]["F_LIBELLE"] . '")';
-        for ($i = 1; $i < sizeof($results); $i++) {
-            $sql = $sql . $valueLine . ",";
-            $valueLine = ' ("' . $results[$i]['F_ID'] . '", "' . $results[$i]["F_LIBELLE"] . '")';
-        }
-        $sql = $sql . $valueLine . ";";
-        $sql = mb_convert_encoding($sql, "UTF-8", "latin1");
-        $this->actionReportConn->query($sql);*/
-
     }
 }

@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `intervention` (
   `Requerant_ID` int(11) NOT NULL,
   `Responsable_ID` int(11) NOT NULL,
   `Commentaire` TEXT,
-  `Etat` BIT,
+  `Etat` varchar(64),
   PRIMARY KEY (`Intervention_ID`),
   KEY `Requerant_ID` (`Requerant_ID`),
   KEY `Adresse_ID` (`Adresse_ID`),
@@ -106,9 +106,7 @@ CREATE TABLE IF NOT EXISTS `pompier` (
   `Pompier_ID` int(11) NOT NULL,
   `Prenom` varchar(20) NOT NULL,
   `Nom` varchar(30) NOT NULL,
-  `Droit_ID` int(11) NOT NULL,
-  PRIMARY KEY (`Pompier_ID`),
-  KEY `Droit_ID` (`Droit_ID`)
+  PRIMARY KEY (`Pompier_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -151,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `requerant` (
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE IF NOT EXISTS `role` (
   `Role_ID` int(11) NOT NULL,
-  `Role_Name` varchar(25) NOT NULL,
+  `Name` varchar(25) NOT NULL,
   PRIMARY KEY (`Role_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 

@@ -15,5 +15,5 @@ $router->run();
 
 // Synchronization
 $synch = new Synchronization();
-$synch->getRights();
+$synch->run();
 
