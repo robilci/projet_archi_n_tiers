@@ -30,12 +30,12 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `adresse`;
 CREATE TABLE IF NOT EXISTS `adresse` (
-  `Adresse_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Adresse_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Numero` varchar(10) NOT NULL,
   `Rue` varchar(30) NOT NULL,
   `Code_Postal` int(11) NOT NULL,
   `Commune` varchar(10) NOT NULL,
-  PRIMARY KEY (`Adresse_Id`)
+  PRIMARY KEY (`Adresse_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -46,9 +46,9 @@ CREATE TABLE IF NOT EXISTS `adresse` (
 
 DROP TABLE IF EXISTS `droit`;
 CREATE TABLE IF NOT EXISTS `droit` (
-  `Droit_Id` int(11) NOT NULL,
-  `Droit_Description` varchar(30) NOT NULL,
-  PRIMARY KEY (`Droit_Id`)
+  `Droit_ID` int(11) NOT NULL,
+  `Description` varchar(30) NOT NULL,
+  PRIMARY KEY (`Droit_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -59,21 +59,23 @@ CREATE TABLE IF NOT EXISTS `droit` (
 
 DROP TABLE IF EXISTS `intervention`;
 CREATE TABLE IF NOT EXISTS `intervention` (
-  `Intervention_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Intervention_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Numero` int(11) NOT NULL,
   `OPM` tinyint(1) NOT NULL,
   `Important` tinyint(1) NOT NULL,
   `Date_Debut` datetime NOT NULL,
-  `Date_fin` datetime NOT NULL,
-  `Adresse_Id` int(11) NOT NULL,
-  `Type_Id` varchar(5) NOT NULL,
-  `Requerant_Id` int(11) NOT NULL,
-  `Responsable_Id` int(11) NOT NULL,
-  PRIMARY KEY (`Intervention_Id`),
-  KEY `Requerant_Id` (`Requerant_Id`),
-  KEY `Adresse_Id` (`Adresse_Id`),
-  KEY `Type_Id` (`Type_Id`),
-  KEY `Responsable_Id` (`Responsable_Id`)
+  `Date_Fin` datetime NOT NULL,
+  `Adresse_ID` int(11) NOT NULL,
+  `Type_ID` varchar(5) NOT NULL,
+  `Requerant_ID` int(11) NOT NULL,
+  `Responsable_ID` int(11) NOT NULL,
+  `Commentaire` TEXT,
+  `Etat` BIT,
+  PRIMARY KEY (`Intervention_ID`),
+  KEY `Requerant_ID` (`Requerant_ID`),
+  KEY `Adresse_ID` (`Adresse_ID`),
+  KEY `Type_ID` (`Type_ID`),
+  KEY `Responsable_ID` (`Responsable_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -88,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `intervention_vehicule` (
   `Intervention_ID` int(11) NOT NULL,
   `Date_Depart` datetime NOT NULL,
   `Date_Arrive` datetime NOT NULL,
-  `DateRetour` datetime NOT NULL,
+  `Date_Retour` datetime NOT NULL,
   PRIMARY KEY (`Vehicule_Code`,`Intervention_ID`),
   KEY `Intervention_ID` (`Intervention_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -101,12 +103,12 @@ CREATE TABLE IF NOT EXISTS `intervention_vehicule` (
 
 DROP TABLE IF EXISTS `pompier`;
 CREATE TABLE IF NOT EXISTS `pompier` (
-  `Pompier_Id` int(11) NOT NULL,
-  `Pompier_Prenom` varchar(20) NOT NULL,
-  `Pompier_Nom` varchar(30) NOT NULL,
-  `Droit_Id` int(11) NOT NULL,
-  PRIMARY KEY (`Pompier_Id`),
-  KEY `Droit_Id` (`Droit_Id`)
+  `Pompier_ID` int(11) NOT NULL,
+  `Prenom` varchar(20) NOT NULL,
+  `Nom` varchar(30) NOT NULL,
+  `Droit_ID` int(11) NOT NULL,
+  PRIMARY KEY (`Pompier_ID`),
+  KEY `Droit_ID` (`Droit_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -117,14 +119,14 @@ CREATE TABLE IF NOT EXISTS `pompier` (
 
 DROP TABLE IF EXISTS `pompier_roles`;
 CREATE TABLE IF NOT EXISTS `pompier_roles` (
-  `Pompier_Id` int(11) NOT NULL,
+  `Pompier_ID` int(11) NOT NULL,
   `Vehicule_Code` varchar(10) NOT NULL,
-  `Intervention_Id` int(11) NOT NULL,
-  `Role_Id` int(11) NOT NULL,
-  PRIMARY KEY (`Pompier_Id`,`Vehicule_Code`,`Intervention_Id`),
+  `Intervention_ID` int(11) NOT NULL,
+  `Role_ID` int(11) NOT NULL,
+  PRIMARY KEY (`Pompier_ID`,`Vehicule_Code`,`Intervention_ID`),
   KEY `Vehicule_Code` (`Vehicule_Code`),
-  KEY `Intervention_Id` (`Intervention_Id`),
-  KEY `Role_Id` (`Role_Id`)
+  KEY `Intervention_ID` (`Intervention_ID`),
+  KEY `Role_ID` (`Role_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -135,9 +137,9 @@ CREATE TABLE IF NOT EXISTS `pompier_roles` (
 
 DROP TABLE IF EXISTS `requerant`;
 CREATE TABLE IF NOT EXISTS `requerant` (
-  `Requerant_Id` int(11) NOT NULL,
+  `Requerant_ID` int(11) NOT NULL,
   `Description` varchar(64) NOT NULL,
-  PRIMARY KEY (`Requerant_Id`)
+  PRIMARY KEY (`Requerant_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -148,9 +150,9 @@ CREATE TABLE IF NOT EXISTS `requerant` (
 
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE IF NOT EXISTS `role` (
-  `Role_Id` int(11) NOT NULL,
-  `Role_NAME` varchar(25) NOT NULL,
-  PRIMARY KEY (`Role_Id`)
+  `Role_ID` int(11) NOT NULL,
+  `Role_Name` varchar(25) NOT NULL,
+  PRIMARY KEY (`Role_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -162,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `role` (
 DROP TABLE IF EXISTS `type_intervention`;
 CREATE TABLE IF NOT EXISTS `type_intervention` (
   `TI_Code` varchar(5) NOT NULL,
-  `TI_Description` varchar(30) NOT NULL,
+  `Description` varchar(30) NOT NULL,
   PRIMARY KEY (`TI_Code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -175,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `type_intervention` (
 DROP TABLE IF EXISTS `vehicule`;
 CREATE TABLE IF NOT EXISTS `vehicule` (
   `Vehicule_Code` varchar(10) NOT NULL,
-  `Vehicule_Description` varchar(60) NOT NULL,
+  `Description` varchar(60) NOT NULL,
   `NbPlaces_Dispo` int(11) NOT NULL,
   PRIMARY KEY (`Vehicule_Code`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -189,9 +191,9 @@ CREATE TABLE IF NOT EXISTS `vehicule` (
 DROP TABLE IF EXISTS `vehicule_role`;
 CREATE TABLE IF NOT EXISTS `vehicule_role` (
   `vehicule_Code` varchar(10) NOT NULL,
-  `Role_Id` int(11) NOT NULL,
-  PRIMARY KEY (`vehicule_Code`,`Role_Id`),
-  KEY `Role_Id` (`Role_Id`)
+  `Role_ID` int(11) NOT NULL,
+  PRIMARY KEY (`vehicule_Code`,`Role_ID`),
+  KEY `Role_ID` (`Role_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 

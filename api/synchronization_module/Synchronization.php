@@ -45,4 +45,8 @@ class Synchronization
         $sql = mb_convert_encoding($sql, "UTF-8", "latin1");
         $this->actionReportConn->query($sql);
     }
+
+    private function insert($sourceTable, $destinationTable, $sourceKeys, $destinationKeys){
+
+    }
 }
