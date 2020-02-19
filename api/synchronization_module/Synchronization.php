@@ -1,6 +1,10 @@
 <?php
 
-require_once(dirname(__DIR__)."/database/Database.php");
+require_once(dirname(__DIR__) . "/database/Database.php");
+require_once("exception/EmptyArrayKeyException.php");
+require_once("exception/NoTableSpecifiedException.php");
+require_once("exception/NullSelectionException.php");
+require_once("exception/KeysNumberNotEqualException.php");
 
 class Synchronization
 {
@@ -10,6 +14,7 @@ class Synchronization
     private $db_pass;
     private $db_host;
     private $db_name;
+    private $db_port;
 
     public function __construct()
     {
@@ -18,30 +23,91 @@ class Synchronization
         $this->db_pass = $this->settings['db_pass'];
         $this->db_host = $this->settings['db_host'];
         $this->db_name = $this->settings['db_name'];
+        $this->db_port = $this->settings['db_port'];
 
         try {
-            $this->actionReportConn = new PDO('mysql:dbame='. $this->db_name .';host='. $this->db_host, $this->db_user, $this->db_pass);
+            $this->actionReportConn = new PDO('mysql:host=' . $this->db_host . ';port=' . $this->db_port . ';dbname=' . $this->db_name, $this->db_user, $this->db_pass);
             $this->actionReportConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->actionReportConn->query("SELECT * FROM droit");
-        } catch (Exception $e){
+        } catch (Exception $e) {
             print_r($e->getMessage());
         }
     }
 
-    public function getRights(){
+    public function run(){
+        $this->copyRights();
+        $this->copyRoles();
+        $this->copyFireFighters();
+        $this->copyVehicules();
+    }
 
-        $sql = "SELECT F_ID, F_LIBELLE FROM fonctionnalite";
+    private function copyRights()
+    {
+        $this->copyInsert("fonctionnalite", "droit", ["F_ID", "F_LIBELLE"], ["Droit_ID", "Description"]);
+    }
+
+    private function copyRoles()
+    {
+        $this->copyInsert("type_participation", "role", ["TP_ID", "TP_LIBELLE"], ["Role_ID", "Name"]);
+    }
+
+    private function copyFireFighters()
+    {
+        $this->copyInsert("pompier", "pompier", ["P_ID", "P_PRENOM", "P_NOM"], ["Pompier_ID", "Prenom", "Nom"]);
+    }
+
+    private function copyVehicules()
+    {
+        $this->copyInsert("type_vehicule", "vehicule", ["TV_CODE", "TV_LIBELLE", "TV_NB"], ["Vehicule_Code", "Description", "NbPlaces_Dispo"]);
+    }
+
+    private function copyInsert($sourceTable, $destinationTable, $sourceKeys, $destinationKeys)
+    {
+        $sourceKeysSize = sizeof($sourceKeys);
+        $destKeysSize = sizeof($destinationKeys);
+        if ($sourceKeysSize < 1 || $destKeysSize < 1)
+            throw new EmptyArrayKeyException('No key specified in source or destination keys array');
+
+        if ($sourceTable == "" || $destinationTable == "")
+            throw new NoTableSpecifiedException('No destination or source table specified');
+
+        if ($sourceKeysSize != $destKeysSize)
+            throw new KeysNumberNotEqualException('Number of keys in both keys array are not equal');
+
+        $this->actionReportConn->query("DELETE FROM ".$destinationTable);
+
+        $sql ='SELECT ' . $sourceKeys[0];
+        for ($i = 1; $i < $sourceKeysSize; $i++) {
+            $sql = $sql . ',' . $sourceKeys[$i];
+        }
+        $sql = $sql . ' FROM ' . $sourceTable;
         $result = Database::getPDO()->query($sql);
-        $sql = "INSERT INTO droit (droit_Id, Droit_Description) VALUES ";
         $results = $result->fetchAll();
 
-        $valueLine = ' ("'. $results[0]['F_ID'] .'", "'. $results[0]["F_LIBELLE"]. '")';
-        for($i = 1; $i < sizeof($results); $i++){
-            $sql = $sql . $valueLine . ",";
-            $valueLine = ' ("'. $results[$i]['F_ID'] .'", "'. $results[$i]["F_LIBELLE"]. '")';
+        if (sizeof($results) < 1)
+            throw new NullSelectionException("Result of the request is null, no data to copy");
+
+        $sql = 'INSERT INTO ' . $destinationTable . ' (' . $destinationKeys[0];
+        for ($i = 1; $i < $destKeysSize; $i++) {
+            $sql = $sql .", ". $destinationKeys[$i];
         }
-        $sql = $sql . $valueLine . ";";
-        $this->actionReportConn->query("SELECT * FROM droit");
-        $this->actionReportConn->close();
+        $sql = $sql. ') VALUES ';
+
+        for($i = 0; $i < sizeof($results); $i++){
+            $sql = $sql. '(';
+            for($y = 0; $y < $sourceKeysSize; $y++){
+                $sql = $sql.'"'. $results[$i][$sourceKeys[$y]]. '"';
+
+                if(!($y == $sourceKeysSize - 1))
+                    $sql = $sql. ', ';
+            }
+            $sql = $sql. ')';
+
+            if($i == sizeof($results) - 1)
+                $sql = $sql. ';';
+            else
+                $sql = $sql. ', ';
+        }
+
+        $this->actionReportConn->query($sql);
     }
 }

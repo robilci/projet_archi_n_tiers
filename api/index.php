@@ -14,6 +14,6 @@ $router->get('/', 'Index#home');
 $router->run();
 
 // Synchronization
-//$synch = new Synchronization();
-//$synch->getRights();
+$synch = new Synchronization();
+$synch->run();
 
