@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="def56f5e-7651-474d-b1c7-f1c657be3ff1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../action_report.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../action_report.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../action-reports/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../action-reports/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/synchronization_module/Synchronization.php" beforeDir="false" afterPath="$PROJECT_DIR$/synchronization_module/Synchronization.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../action-reports" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -72,7 +72,9 @@
       <workItem from="1581933170869" duration="564000" />
       <workItem from="1581948426317" duration="7682000" />
       <workItem from="1582015357852" duration="663000" />
-      <workItem from="1582031364967" duration="11333000" />
+      <workItem from="1582031364967" duration="11649000" />
+      <workItem from="1582116955576" duration="1073000" />
+      <workItem from="1582126095824" duration="517000" />
     </task>
     <servers />
   </component>
@@ -88,10 +90,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1581010024265" />
-    <state x="549" y="191" key="FileChooserDialogImpl" timestamp="1581949831058">
+    <state x="549" y="191" key="FileChooserDialogImpl" timestamp="1582044133209">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="191" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1581949831058" />
+    <state x="549" y="191" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1582044133209" />
     <state x="540" y="268" key="NewPhpClassDialog" timestamp="1582042367437">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -100,10 +102,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="604" y="365" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1581948708452" />
-    <state x="477" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1582031377441">
+    <state x="477" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1582116953532">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="477" y="261" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1582031377441" />
+    <state x="477" y="261" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1582116953532" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1582041127326">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
