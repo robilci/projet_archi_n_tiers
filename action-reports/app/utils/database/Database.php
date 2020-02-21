@@ -13,6 +13,7 @@ class Database
     private static $db_pass;
     private static $db_host;
     private static $db_name;
+    private static $db_port;
     private static $pdo;
 
 
@@ -24,13 +25,14 @@ class Database
         $this->settings = require(dirname(__DIR__) . '/config/config.php');
         self::$db_user = $this->settings['db_user'];
         self::$db_pass = $this->settings['db_pass'];
-        self::$db_host = $this->settings['db_host'];;
-        self::$db_name = $this->settings['db_name'];;
+        self::$db_host = $this->settings['db_host'];
+        self::$db_name = $this->settings['db_name'];
+        self::$db_port = $this->settings['db_port'];
     }
 
     public static function getPDO(){
         if(is_null(self::$pdo)) {
-            self::$pdo = new \PDO('mysql:dbame='. self::$db_name .';host='. self::$db_host, self::$db_user, self::$db_pass);
+            self::$pdo = new  \PDO('mysql:host=' . self::$db_host . ';port=' . self::$db_port . ';dbname=' . self::$db_name, self::$db_user, self::$db_pass);
             self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
 

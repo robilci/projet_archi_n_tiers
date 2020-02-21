@@ -43,13 +43,13 @@
                     </div>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/home">Accueil<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mon profil</a>
+                    <a class="nav-link" href="/myAccount">Mon profil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Déconnexion</a>
+                    <a class="nav-link" href="/logOut" tabindex="-1" aria-disabled="true">Déconnexion</a>
                 </li>
             </ul>
         </div>

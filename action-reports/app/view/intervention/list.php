@@ -2,6 +2,7 @@
 <!------ Include the above in your HEAD tag
 
 ---------->
+
 <div class="container">
     <!--search bar --->
     <div class="container h-100">
