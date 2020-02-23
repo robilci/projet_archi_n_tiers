@@ -24,7 +24,7 @@ class App
         $router->get('/interventions', 'Intervention#interventionsList');
 
 		$router->post('/auth', 'Authentification#authentification');
-        $router->get('/', 'Index#authentication');
+        $router->get('/', 'Index#authentication', 'auth');
         $router->get('/intervention/:id', "Intervention#getIntervention")->with('id', '[0-9]+');
         $router->get('/test',  function () use ($router) { echo $router->url('route1', ['id' => "fff", 'nom' => 'gggggg']);})->with('id', '[0-9]+');
         $router->run();

@@ -10,17 +10,14 @@ new Database();
 
 $router = new Router($_GET['url']);
 
-// Routes
+// Routes GET
 $router->get('/pompier', 'Pompier#getPompier');
 $router->get('/', 'Index#home');
-$router->post('/pompier/authentification','Pompier#getPompierAuthentification');
-$router->run();
-
-// Synchronization
-//$synch = new Synchronization();
-//$synch->run();
-
-
 $router->get('/synchronize', 'Index#synchronize');
+
+// Routes POST
+$router->post('/pompier/authentification','Pompier#getPompierAuthentification');
+
+// Router run
 $router->run();
 

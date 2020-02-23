@@ -16,9 +16,9 @@ class PompierController
 		$pass = md5($_POST["pass"]);
 		$query = 'SELECT P_PRENOM, P_NOM, P_MDP,P_EMAIL FROM pompier WHERE pompier.P_EMAIL = "'. htmlspecialchars($_POST["email"]) . '" AND pompier.P_MDP = "' .$pass. '"';
         $result = Database::getPDO()->query($query);
-        $json = json_encode($result->fetchAll(), true);
+        $json = json_encode($result->fetch(), true);
         echo $json;
-		
+
 	}
 
 }

@@ -2,6 +2,8 @@
 
 namespace App\controller;
 
+use function MongoDB\BSON\toJSON;
+
 /**
  * @package App\controller
  */
@@ -24,16 +26,12 @@ class AuthentificationController extends AppController {
 		
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $result = curl_exec($curl);
-
-        var_dump($result);
-		$json = json_decode($result, true);
-		var_dump($json);
-		if(empty($json))
-		{
-			echo "c'est nul";
-		}
-		//$this->render('intervention.list', compact('result'));
-
         curl_close($curl);
+        $json = json_decode($result, true);
+
+		if(empty($json)){
+		    $error = "Mauvais identifiant ou mot de passe";
+            $this->render('authentication', compact('error'));
+        }
     }
 }
