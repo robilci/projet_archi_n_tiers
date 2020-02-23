@@ -19,7 +19,6 @@ class InterventionController extends AppController {
      */
     public function getIntervention($id){
        var_dump(Database::getPDO());
-       // var_dump($result->fetchAll());
         echo "intervention numéro ".$id;
     }
 
@@ -40,4 +39,5 @@ class InterventionController extends AppController {
     public function auth(){
         echo $_POST["email"];
     }
+
 }
