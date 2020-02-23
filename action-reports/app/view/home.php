@@ -1,6 +1,6 @@
 
 <?php
- $Auth = new \App\controller\AuthentificationController();
+ $Auth = new \App\controller\AuthenticationController();
  //check if the user is logged in
 if($Auth->user('Prenom')):?>
 <h1> Bonjour <?php echo  $Auth->user('Nom');?></h1>

@@ -5,7 +5,7 @@ namespace App\controller;
 
 use function MongoDB\BSON\toJSON;
 
-use App\Model\AuthentificationModel;
+use App\Model\AuthenticationModel;
 use App\utils\database\Database;
 use App\utils\router\Route;
 
@@ -14,7 +14,7 @@ use App\utils\router\Route;
  * @package App\controller
  */
 
-class AuthentificationController extends AppController
+class AuthenticationController extends AppController
 {
 
     /**
@@ -27,9 +27,9 @@ class AuthentificationController extends AppController
 
   
 
-    public function authentification(){
+    public function authentication(){
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentification');
+        curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentication');
 		curl_setopt($curl,CURLOPT_POSTFIELDS,"email=".htmlspecialchars($_POST["email"])."&pass=".htmlspecialchars($_POST["pass"]));
 		
 		
@@ -47,12 +47,12 @@ class AuthentificationController extends AppController
 
 
 
-    public function authentificationDounya()
+    public function authenticationDounya()
     {
         /*$email = "admin@mybrigade.org";
         $mdp = md5("1234");
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentification');
+        curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentication');
         curl_setopt($curl,CURLOPT_POSTFIELDS,"email=".$email."&mdp=".$mdp);
 
 
@@ -66,8 +66,8 @@ class AuthentificationController extends AppController
         //  curl_close($curl);
 
         $prenom = $_POST['login'];
-        $m = new AuthentificationModel();
-        $data = $m->authentification($prenom);
+        $m = new AuthenticationModel();
+        $data = $m->authentication($prenom);
         if (count($data) > 0) {
             $_SESSION['Auth'] = $data[0];
             $this->render('home');
@@ -81,7 +81,7 @@ class AuthentificationController extends AppController
      */
     public function allow($rang)
     {
-        $m = new AuthentificationModel();
+        $m = new AuthenticationModel();
         $data = $m->roles();
         $roles = array();
         //recover all rights

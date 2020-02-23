@@ -16,7 +16,7 @@ $router->get('/', 'Index#home');
 $router->get('/synchronize', 'Index#synchronize');
 
 // Routes POST
-$router->post('/pompier/authentification','Pompier#getPompierAuthentification');
+$router->post('/pompier/authentication','Pompier#getPompierAuthentification');
 
 // Router run
 $router->run();

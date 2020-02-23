@@ -22,15 +22,15 @@ class App
             ->with('nom', '[a-z]+');
 
 
-		$router->post('/auth', 'Authentification#authentification');
+		$router->post('/auth', 'Authentication#authentication');
         $router->get('/interventions', 'Intervention#listAll');
         $router->get('/interventions/checked', 'Intervention#checked');
         $router->get('/interventions/toCheck', 'Intervention#toCheck');
         $router->get('/interventions/rejected', 'Intervention#rejected');
         $router->get('/interventions/onGoing', 'Intervention#onGoing');
         $router->get('/interventions/archived', 'Intervention#archived');
-        $router->post('/auth', 'Authentification#authentification');
-        $router->get('/logOut', 'Authentification#logOut');
+        $router->post('/auth', 'Authentication#authentication');
+        $router->get('/logOut', 'Authentication#logOut');
         $router->get('/myAccount', 'User#myAccount');
         $router->get('/', 'Index#authentication','auth');
         $router->get('/home', 'Index#home','home');

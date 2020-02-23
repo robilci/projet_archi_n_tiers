@@ -2,7 +2,7 @@
 namespace App\Model;
 use App\utils\database\Database;
 
-class AuthentificationModel extends AppModel {
+class AuthenticationModel extends AppModel {
 
     /**
      * @var Database
@@ -10,7 +10,7 @@ class AuthentificationModel extends AppModel {
 
 
     /**
-     * AuthentificationModel constructor.
+     * AuthenticationModel constructor.
      */
 
 

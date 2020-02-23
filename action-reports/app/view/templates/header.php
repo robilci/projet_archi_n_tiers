@@ -38,7 +38,7 @@
     <!--changePassword-->
     <!--Navbar -->
     <?php
-    $Auth = new \App\controller\AuthentificationController();
+    $Auth = new \App\controller\AuthenticationController();
     //check if the user is logged in
     if($Auth->user('Prenom')):?>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
