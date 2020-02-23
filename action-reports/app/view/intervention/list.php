@@ -17,7 +17,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h4>La liste de toutes les intereventions</h4>
+            <h4>La liste de toutes les interventions</h4>
             <div class="table-responsive">
 
                 <table id="mytable" class="table table-bordred table-striped">
@@ -44,8 +44,6 @@
                     </tbody>
 
                 </table>
-
-
         </div>
     </div>
 </div>

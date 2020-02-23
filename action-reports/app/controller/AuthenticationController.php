@@ -41,11 +41,23 @@ class AuthenticationController extends AppController
 		if(empty($json)){
 		    $error = "Mauvais identifiant ou mot de passe";
             $this->render('authentication', compact('error'));
+        } else {
+		    $_SESSION["email"] = $json["P_EMAIL"];
+            $_SESSION["firstname"] = $json["P_PRENOM"];
+            $_SESSION["lastname"] = $json["P_NOM"];
+            $this->getRights();
+            $this->render("intervention.list");
         }
     }
 
-
-
+    private function getRights(){
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, 'api/pompier/rights');
+        curl_setopt($curl,CURLOPT_POSTFIELDS,"email=".htmlspecialchars($_SESSION["email"]));
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $_SESSION["rights"] = json_decode($result, true);
+    }
 
     public function authenticationDounya()
     {
@@ -76,7 +88,7 @@ class AuthenticationController extends AppController
     }
     /**
      * Specify the range of rights
-     * @param $rang the rights range
+     * @param $rang - the rights range
      * @return bool
      */
     public function allow($rang)
@@ -118,14 +130,9 @@ class AuthenticationController extends AppController
     /**
      *Login out
      */
-    public function logOut()
+    public function logout()
     {
-        session_destroy();
         $this->render('authentication');
-     /* echo '
-      <a href="/">Se connecter</a>
-      
-      ';*/
     }
 }
 

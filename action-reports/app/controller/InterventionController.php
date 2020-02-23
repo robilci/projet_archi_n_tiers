@@ -29,7 +29,6 @@ class InterventionController extends AppController {
      */
     public function listOne($id)
     {
-        var_dump($_POST['login']);
        // $this->render('intervention.archived');
     }
 
