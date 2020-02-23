@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="429da9e6-df28-423c-9b88-5fa711455bd8" name="Default Changelist" comment="">
-<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../api/synchronization_module/Synchronization.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../api/synchronization_module/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../api/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../api/index.php" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/InterventionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/InterventionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/authentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/authentication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api/.idea/workspace.xml" afterDir="false" />
->>>>>>> e89e1a96c0a62084d59bc15db8da3dbe43a0f074
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,11 +88,6 @@
       <workItem from="1581008153871" duration="4148000" />
       <workItem from="1581933068434" duration="101000" />
       <workItem from="1581949833598" duration="105000" />
-<<<<<<< HEAD
-=======
-      <workItem from="1582044136646" duration="140000" />
-      <workItem from="1582123816355" duration="4541000" />
->>>>>>> e89e1a96c0a62084d59bc15db8da3dbe43a0f074
     </task>
     <servers />
   </component>
@@ -120,17 +107,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="191" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1580208943248" />
-<<<<<<< HEAD
     <state x="549" y="191" key="FileChooserDialogImpl" timestamp="1581933168543">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="191" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1581933168543" />
-=======
-    <state x="549" y="191" key="FileChooserDialogImpl" timestamp="1582126091863">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="549" y="191" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1582126091863" />
->>>>>>> e89e1a96c0a62084d59bc15db8da3dbe43a0f074
     <state x="534" y="268" key="NewPhpClassDialog" timestamp="1580459831905">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -143,31 +123,17 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1580460505484" />
-<<<<<<< HEAD
     <state x="477" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1581008152583">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="477" y="261" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1581008152583" />
-=======
-    <state x="477" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1582123819892">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="477" y="261" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1582123819892" />
->>>>>>> e89e1a96c0a62084d59bc15db8da3dbe43a0f074
     <state x="425" y="197" key="run.anything.popup" timestamp="1580210520889">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1580210520889" />
-<<<<<<< HEAD
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1580384856464">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1580384856464" />
-=======
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582124894513">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1582124894513" />
->>>>>>> e89e1a96c0a62084d59bc15db8da3dbe43a0f074
   </component>
 </project>
