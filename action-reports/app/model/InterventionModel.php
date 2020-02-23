@@ -1,14 +1,10 @@
 <?php
 namespace  App\Model;
+use App\App;
 use App\utils\database\Database;
 
-class InterventionModel{
+class InterventionModel extends AppModel {
 
-private $connection;
-public function __construct()
-{
-    $this->connection=new Database();
-}
     /**
      *List of all the interventions (regardless to their state)
      */

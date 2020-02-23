@@ -25,7 +25,22 @@
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <!--table -->
 
+    <!--account li -->
+    <link href="css/nav.css" rel="stylesheet" >
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--account li -->
+
+    <!--changePassword-->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--changePassword-->
     <!--Navbar -->
+    <?php
+    $Auth = new \App\controller\AuthentificationController();
+    //check if the user is logged in
+    if($Auth->user('Prenom')):?>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <img src="image/pompier.png" height="60px" width="60px" class="img-fluid" alt="Responsive image">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,12 +60,50 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/home">Accueil<span class="sr-only">(current)</span></a>
                 </li>
+
+
                 <li class="nav-item">
-                    <a class="nav-link" href="/myAccount">Mon profil</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Mon compte
+                                <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="navbar-content">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <img src="http://placehold.it/120x120"
+                                                     alt="Alternate Text" class="img-responsive" />
+                                                <p class="text-center small">
+                                                    <a href="#">Change Photo</a></p>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <span>Bhaumik Patel</span>
+                                                <p class="text-muted small">
+                                                    mail@gmail.com</p>
+                                                <div class="divider">
+                                                </div>
+                                                <a href="myAccount" class="btn btn-primary btn-sm active">View Profile</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navbar-footer">
+                                        <div class="navbar-footer-content">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <a href="/password" class="btn btn-default btn-sm">Changer mot de passe</a>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <a href="/logOut" class="btn btn-default btn-sm pull-right">Se déconnecter</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li></ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logOut" tabindex="-1" aria-disabled="true">Déconnexion</a>
-                </li>
+
             </ul>
         </div>
     </nav>
+<?php endif ?>

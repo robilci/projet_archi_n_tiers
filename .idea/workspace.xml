@@ -57,7 +57,7 @@
       <workItem from="1582191920226" duration="34000" />
       <workItem from="1582202143783" duration="9246000" />
       <workItem from="1582211780958" duration="10139000" />
-      <workItem from="1582293636461" duration="908000" />
+      <workItem from="1582293636461" duration="17678000" />
     </task>
     <servers />
   </component>
@@ -65,26 +65,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1582041687946">
+    <state x="463" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582465945766">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582041687946" />
+    <state x="463" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1582465945766" />
+    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1582461289746">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582461289746" />
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582222094343">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1582222094343" />
-    <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582216556214">
+    <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582454792345">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1582216556214" />
+    <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1582454792345" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1582032633933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582032633933" />
-    <state x="517" y="288" key="NewPhpFileDialog" timestamp="1582221945136">
+    <state x="517" y="288" key="NewPhpFileDialog" timestamp="1582465669918">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="288" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1582221945136" />
+    <state x="517" y="288" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1582465669918" />
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582293641166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
