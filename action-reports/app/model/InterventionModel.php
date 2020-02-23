@@ -1,26 +1,15 @@
 <?php
-
-namespace App\controller;
-
+namespace  App\Model;
+use App\App;
 use App\utils\database\Database;
 
-/**
- * Class InterventionController
- * @package App\controller
- */
-class InterventionController extends AppController {
-
-    /**
-     * InterventionController constructor.
-     */
-
+class InterventionModel extends AppModel {
 
     /**
      *List of all the interventions (regardless to their state)
      */
-
     public function listAll(){
-        $this->render('intervention.list');
+
     }
 
     /**
@@ -29,21 +18,15 @@ class InterventionController extends AppController {
      */
     public function listOne($id)
     {
-        var_dump($_POST['login']);
-       // $this->render('intervention.archived');
+
     }
 
     /**
      *List of the last 10 interventions
      */
-
-    public function getIntervention()
-    {
-        var_dump($_POST['login']);
-    }
     public function listLastTen()
     {
-        $this->render('intervention.archived');
+
     }
 
     /**
@@ -51,17 +34,15 @@ class InterventionController extends AppController {
      */
     public function checked()
     {
-        $this->render('intervention.checked');
 
     }
-
 
     /**
      *List of the interventions to be validated
      */
     public function toCheck()
     {
-        $this->render('intervention.toCheck');
+
     }
 
     /**
@@ -69,7 +50,7 @@ class InterventionController extends AppController {
      */
     public function onGoing()
     {
-        $this->render('intervention.onGoing');
+
     }
 
     /**
@@ -77,7 +58,7 @@ class InterventionController extends AppController {
      */
     public function rejected()
     {
-        $this->render('intervention.rejected');
+
     }
 
     /**
@@ -85,7 +66,9 @@ class InterventionController extends AppController {
      */
     public function archived()
     {
-        $this->render('intervention.archived');
+
     }
 
 }
+
+?>

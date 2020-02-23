@@ -4,13 +4,20 @@
 namespace App\controller;
 
 
+use App\Model\IndexModel;
+
 class IndexController extends AppController
 {
     public function home(){
         $this->render('home');
     }
 
-    public function authentication(){
+    public function authentication()
+    {
         $this->render('authentication');
+
     }
+
+
+
 }

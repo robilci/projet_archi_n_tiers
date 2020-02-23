@@ -35,7 +35,6 @@ class Database
             self::$pdo = new \PDO("mysql:host=". self::$db_host .";port=". self::$db_port .";dbname=". self::$db_name, self::$db_user, self::$db_pass);
             self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
-
         return self::$pdo;
     }
 }
