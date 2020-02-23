@@ -27,7 +27,7 @@ class Database
         self::$db_pass = $this->settings['db_pass'];
         self::$db_host = $this->settings['db_host'];
         self::$db_name = $this->settings['db_name'];
-        self::$db_port = $this->settings['db_port'];;
+        self::$db_port = $this->settings['db_port'];
     }
 
     public static function getPDO(){
