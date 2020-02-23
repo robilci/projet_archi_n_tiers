@@ -58,7 +58,7 @@ class AuthenticationController extends AppController
         curl_close($curl);
         $_SESSION["rights"] = json_decode($result, true);
     }
-
+//pour tester la gestion des droits
     public function authenticationDounya()
     {
         /*$email = "admin@mybrigade.org";
