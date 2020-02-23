@@ -2,6 +2,10 @@
 
 namespace App\controller;
 
+use App\utils\database\Database;
+
+require_once dirname(__DIR__)."/utils/database/Database.php";
+
 /**
  * Class InterventionController
  * @package App\controller
@@ -16,6 +20,8 @@ class InterventionController extends AppController {
      * @param $id - the id of the intervention
      */
     public function getIntervention($id){
+        $result = Database::getPDO()->query("SELECT * FROM pompier");
+        var_dump($result->fetchAll());
         echo "intervention numéro ".$id;
     }
 
