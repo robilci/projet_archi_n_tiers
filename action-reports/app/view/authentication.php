@@ -8,9 +8,14 @@
         </div>
 
         <!-- Login Form -->
+<<<<<<< HEAD
         <form action = "/auth" method="post">
             <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
             <input type="text" id="password" class="fadeIn third" name="mdp" placeholder="password">
+=======
+        <form action="/auth" method="post">
+            <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
+>>>>>>> e89e1a96c0a62084d59bc15db8da3dbe43a0f074
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 

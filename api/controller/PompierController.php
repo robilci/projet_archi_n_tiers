@@ -9,6 +9,7 @@ class PompierController
         $json = json_encode($result->fetchAll());
         echo $json;
     }
+
 	
 	public function getPompierAuthentification()
 	{
@@ -20,4 +21,5 @@ class PompierController
 		
 		//echo"toto";
 	}
+
 }

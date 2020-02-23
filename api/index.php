@@ -2,8 +2,10 @@
 
 require_once 'database/Database.php';
 require_once 'router/Router.php';
+<<<<<<< HEAD
 require_once 'synchronization_module/Synchronization.php';
 
+ 
 new Database();
 
 $router = new Router($_GET['url']);
@@ -17,4 +19,8 @@ $router->run();
 // Synchronization
 //$synch = new Synchronization();
 //$synch->run();
+
+
+$router->get('/synchronize', 'Index#synchronize');
+$router->run();
 
