@@ -32,4 +32,8 @@ class InterventionController extends AppController {
 
         curl_close($curl);
     }
+
+    public function auth(){
+        echo $_POST["email"];
+    }
 }
