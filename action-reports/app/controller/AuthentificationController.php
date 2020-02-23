@@ -17,19 +17,22 @@ class AuthentificationController extends AppController {
   
 
     public function authentification(){
-		$email = "admin@mybrigade.org";
-		$mdp = md5("1234");
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentification');
-		curl_setopt($curl,CURLOPT_POSTFIELDS,"email=".$email."&mdp=".$mdp);
+		curl_setopt($curl,CURLOPT_POSTFIELDS,"email=".htmlspecialchars($_POST["email"])."&pass=".htmlspecialchars($_POST["pass"]));
 		
 		
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $result = curl_exec($curl);
 
         var_dump($result);
-
-        //$this->render('intervention.list', compact('result'));
+		$json = json_decode($result, true);
+		var_dump($json);
+		if(empty($json))
+		{
+			echo "c'est nul";
+		}
+		//$this->render('intervention.list', compact('result'));
 
         curl_close($curl);
     }
