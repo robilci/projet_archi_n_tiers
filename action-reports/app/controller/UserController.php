@@ -27,7 +27,8 @@ namespace App\controller;
          $this->render('user.account');
      }
      public function changePassword()
-     {
+     {         var_dump($_SESSION);
 $this->render('user.password');
+
      }
  }

@@ -57,7 +57,10 @@
       <workItem from="1582191920226" duration="34000" />
       <workItem from="1582202143783" duration="9246000" />
       <workItem from="1582211780958" duration="10139000" />
-      <workItem from="1582293636461" duration="17678000" />
+      <workItem from="1582293636461" duration="21147000" />
+      <workItem from="1582482423252" duration="337000" />
+      <workItem from="1582482806924" duration="325000" />
+      <workItem from="1582483152944" duration="14000" />
     </task>
     <servers />
   </component>
@@ -81,18 +84,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1582454792345" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1582032633933">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1582476662285">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582032633933" />
-    <state x="517" y="288" key="NewPhpFileDialog" timestamp="1582465669918">
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582476662285" />
+    <state x="517" y="288" key="NewPhpFileDialog" timestamp="1582475447013">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="288" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1582465669918" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582293641166">
+    <state x="517" y="288" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1582475447013" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582483152378">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582293641166" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582483152378" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1582095139437">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
