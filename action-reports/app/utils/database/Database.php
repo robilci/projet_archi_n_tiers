@@ -27,18 +27,15 @@ class Database
         self::$db_pass = $this->settings['db_pass'];
         self::$db_host = $this->settings['db_host'];
         self::$db_name = $this->settings['db_name'];
-        self::$db_port = $this->settings['db_port'];
+        self::$db_port = $this->settings['db_port'];;
     }
 
     public static function getPDO(){
         if(is_null(self::$pdo)) {
-            try {
-                self::$pdo = new PDO("mysql:host=". self::$db_host .";port=". self::$db_port .";dbname=". self::$db_name, self::$db_user, self::$db_pass);
-                self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (Exception $e) {
-                print_r($e->getMessage());
-            }
+            self::$pdo = new \PDO("mysql:host=". self::$db_host .";port=". self::$db_port .";dbname=". self::$db_name, self::$db_user, self::$db_pass);
+            self::$pdo->setAttribute(PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
+
         return self::$pdo;
     }
 }
