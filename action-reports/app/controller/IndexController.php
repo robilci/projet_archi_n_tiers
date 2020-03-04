@@ -14,7 +14,6 @@ class IndexController extends AppController
 
     public function authentication()
     {
-        $this->render('authentication');
-
+        $this->renderWithoutAuth('authentication');
     }
 }

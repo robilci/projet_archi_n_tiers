@@ -3,6 +3,8 @@
 
 namespace App\controller;
 
+use App\utils\session\Session;
+
 
 class Controller {
 
@@ -15,7 +17,7 @@ class Controller {
      * The render method displays the view from the controller, it takes as a parameter
      * a view and one or more variables
      */
-    protected function render($view, $variables = []) {
+    protected function renderWithoutAuth($view, $variables = []) {
         ob_start();
         // extract the variables transformed by the compact php function
         extract($variables);
@@ -25,12 +27,15 @@ class Controller {
         require ($this->viewPath . 'templates/' . $this->template . '.php');
     }
 
-    protected function verifyAuthThenRender($view, $variables = []) {
+    protected function render($view, $variables = []) {
 
         ob_start();
         // extract the variables transformed by the compact php function
         extract($variables);
-        require($this->viewPath . str_replace('.', '/', $view) . '.php');
+        if(Session::exist())
+            require($this->viewPath . str_replace('.', '/', $view) . '.php');
+        else
+            require($this->viewPath . 'authentication.php');
         $content = ob_get_clean();
 
         require ($this->viewPath . 'templates/' . $this->template . '.php');
