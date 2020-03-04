@@ -25,6 +25,19 @@ class Controller {
         require ($this->viewPath . 'templates/' . $this->template . '.php');
     }
 
+    protected function verifyAuthThenRender($view, $variables = []) {
+
+        ob_start();
+        // extract the variables transformed by the compact php function
+        extract($variables);
+        require($this->viewPath . str_replace('.', '/', $view) . '.php');
+        $content = ob_get_clean();
+
+        require ($this->viewPath . 'templates/' . $this->template . '.php');
+    }
+
+
+
     /**
      * s'afficher en cas d'erreur 404
      */

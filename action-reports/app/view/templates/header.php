@@ -37,10 +37,12 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!--changePassword-->
     <!--Navbar -->
-    <?php
-    $Auth = new \App\controller\AuthenticationController();
-    //check if the user is logged in
-if(isset($_SESSION)) {
+
+<?php
+use App\utils\session\Session;
+
+//check if the user is logged in
+if(Session::exist()) {
     require_once "nav.php";
 }
 

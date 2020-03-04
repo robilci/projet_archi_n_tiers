@@ -21,14 +21,13 @@ class App
         $router->get('/image/:nom', 'Index#image', 'image')
             ->with('nom', '[a-z]+');
 
-
-		$router->post('/auth', 'Authentication#authentication');
         $router->get('/interventions', 'Intervention#listAll');
         $router->get('/interventions/checked', 'Intervention#checked');
         $router->get('/interventions/toCheck', 'Intervention#toCheck');
         $router->get('/interventions/rejected', 'Intervention#rejected');
         $router->get('/interventions/onGoing', 'Intervention#onGoing');
         $router->get('/interventions/archived', 'Intervention#archived');
+        $router->get('/interventions/create', 'Intervention#create');
         $router->post('/auth', 'Authentication#authentication');
         $router->get('/logout', 'Authentication#logout');
         $router->get('/myAccount', 'User#myAccount');

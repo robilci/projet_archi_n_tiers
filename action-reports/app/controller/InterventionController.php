@@ -51,7 +51,6 @@ class InterventionController extends AppController {
     public function checked()
     {
         $this->render('intervention.checked');
-
     }
 
 
@@ -84,7 +83,11 @@ class InterventionController extends AppController {
      */
     public function archived()
     {
-        $this->render('intervention.archived');
+        $this->verifyAuthThenRender('intervention.archived');
+    }
+
+    public function create(){
+        $this->render('intervention.create');
     }
 
 }

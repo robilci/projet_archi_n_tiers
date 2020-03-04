@@ -17,7 +17,4 @@ class IndexController extends AppController
         $this->render('authentication');
 
     }
-
-
-
 }
