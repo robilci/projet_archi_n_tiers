@@ -13,7 +13,7 @@ if($Auth->user('Prenom')):?>
             <a href="/admin"> administration </a>
         </li>
     <?php endif ?>
-    <li> <a href="/logOut"> Se deconnecter  </a></li>
+    <li> <a href="/logout"> Se deconnecter  </a></li>
 </ul>
 <?php else: ?>
     <li> <a href="/"> Se connecter  </a></li>

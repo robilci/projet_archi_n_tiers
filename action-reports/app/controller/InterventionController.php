@@ -20,7 +20,7 @@ class InterventionController extends AppController {
      */
 
     public function listAll(){
-        $this->render('intervention.list');
+        $this->renderWithoutAuth('intervention.list');
     }
 
     /**
@@ -40,9 +40,11 @@ class InterventionController extends AppController {
     {
         var_dump($_POST['login']);
     }
+
     public function listLastTen()
     {
-        $this->render('intervention.archived');
+
+        $this->renderWithoutAuth('authentication');
     }
 
     /**
@@ -83,11 +85,13 @@ class InterventionController extends AppController {
      */
     public function archived()
     {
-        $this->verifyAuthThenRender('intervention.archived');
+        $this->render('intervention.archived');
     }
 
     public function create(){
         $this->render('intervention.create');
     }
+
+
 
 }

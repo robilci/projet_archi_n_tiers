@@ -91,8 +91,6 @@ class Router
         foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route){
             if($route->match($this->url)){
                 return $route->call();
-            } else if (preg_match('/\.(jpg|png|jpeg)$/', $this->url)){
-                require 'public/image/test.png';
             }
         }
 

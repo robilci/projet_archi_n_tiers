@@ -29,25 +29,33 @@ class AuthenticationController extends AppController
   
 
     public function authentication(){
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentication');
-		curl_setopt($curl,CURLOPT_POSTFIELDS,"email=".htmlspecialchars($_POST["email"])."&pass=".htmlspecialchars($_POST["pass"]));
-		
-		
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        $result = curl_exec($curl);
-        curl_close($curl);
-        $json = json_decode($result, true);
+        if(!isset($_SESSION))
+            session_start();
+        if(!isset($_SESSION["exist"])) {
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentication');
+            curl_setopt($curl, CURLOPT_POSTFIELDS, "email=" . htmlspecialchars($_POST["email"]) . "&pass=" . htmlspecialchars($_POST["pass"]));
 
-		if(empty($json)){
-		    $error = "Mauvais identifiant ou mot de passe";
-            $this->render('authentication', compact('error'));
+
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+            $result = curl_exec($curl);
+            curl_close($curl);
+            $json = json_decode($result, true);
+
+
+            if (empty($json)) {
+                $error = "Mauvais identifiant ou mot de passe";
+                $this->renderWithoutAuth('authentication', compact('error'));
+            } else {
+                $_SESSION["email"] = $json["P_EMAIL"];
+                $_SESSION["firstname"] = $json["P_PRENOM"];
+                $_SESSION["lastname"] = $json["P_NOM"];
+                $_SESSION["exist"] = true;
+
+                $this->render('intervention.list');
+            }
         } else {
-            $session = Session::getInstance();
-            $session->setEmail($json["P_EMAIL"]);
-            $session->setFirstname($json["P_PRENOM"]);
-            $session->setLastname($json["P_NOM"]);
-            $this->render("intervention.list");
+            $this->render('intervention.list');
         }
     }
 
@@ -60,13 +68,6 @@ class AuthenticationController extends AppController
         $_SESSION["rights"] = json_decode($result, true);
     }
 
-    /**
-     *Login out
-     */
-    public function logout()
-    {
-        $this->render('authentication');
-    }
 }
 
 

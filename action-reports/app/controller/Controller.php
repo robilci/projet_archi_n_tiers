@@ -28,17 +28,16 @@ class Controller {
     }
 
     protected function render($view, $variables = []) {
-
-        ob_start();
-        // extract the variables transformed by the compact php function
-        extract($variables);
-        if(Session::exist())
-            require($this->viewPath . str_replace('.', '/', $view) . '.php');
-        else
-            require($this->viewPath . 'authentication.php');
-        $content = ob_get_clean();
-
-        require ($this->viewPath . 'templates/' . $this->template . '.php');
+        if(isset($_SESSION)) {
+            if (isset($_SESSION["exist"])) {
+                ob_start();
+                // extract the variables transformed by the compact php function
+                extract($variables);
+                require($this->viewPath . str_replace('.', '/', $view) . '.php');
+                $content = ob_get_clean();
+                require($this->viewPath . 'templates/' . $this->template . '.php');
+            }
+        }
     }
 
 

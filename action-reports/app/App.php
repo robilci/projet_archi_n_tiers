@@ -15,28 +15,11 @@ class App
     public static function loadRouter(){
         $router = new Router($_GET['url']);
 
-        $router->get('/intervention/:id', 'Intervention#getIntervention', 'test')
-            ->with('id', '[0-9]+');
-
-        $router->get('/image/:nom', 'Index#image', 'image')
-            ->with('nom', '[a-z]+');
-
-        $router->get('/interventions', 'Intervention#listAll');
-        $router->get('/interventions/checked', 'Intervention#checked');
-        $router->get('/interventions/toCheck', 'Intervention#toCheck');
-        $router->get('/interventions/rejected', 'Intervention#rejected');
-        $router->get('/interventions/onGoing', 'Intervention#onGoing');
-        $router->get('/interventions/archived', 'Intervention#archived');
-        $router->get('/interventions/create', 'Intervention#create');
-        $router->post('/auth', 'Authentication#authentication');
-        $router->get('/logout', 'Authentication#logout');
-        $router->get('/myAccount', 'User#myAccount');
-        $router->get('/', 'Index#authentication','auth');
-        $router->get('/home', 'Index#home','home');
-        $router->get('/admin', 'UserController#adminPage','admin');
-        $router->get('/user', 'User#getUser');
-        $router->get('/password', 'User#changePassword');
-        $router->get('/intervention/:id', "Intervention#getIntervention")->with('id', '[0-9]+');
+        $router->post('/home', 'Authentication#authentication');
+        $router->get('/home', 'Authentication#authentication');
+        $router->get('/logout', 'Index#logout');
+        $router->get('/authentication', 'Index#authentication');
+        //$router->get('/intervention/:id', "Intervention#getIntervention")->with('id', '[0-9]+');
         $router->run();
     }
 

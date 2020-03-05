@@ -5,13 +5,13 @@
 
         <!-- Icon -->
         <div class="fadeIn first">
-            <img src="image/pompier.png" id="icon" alt="User Icon" />
+            <img src="/image/pompier.png" id="icon" alt="User Icon" />
         </div>
 
         <!-- Login Form -->
 
 
-        <form action = "/auth" method="post">
+        <form action="/home" method="post">
             <?php
             if(isset($error))
                 if($error != ""){
