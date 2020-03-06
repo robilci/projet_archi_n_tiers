@@ -19,6 +19,7 @@ class App
         $router->get('/home', 'Authentication#authentication');
         $router->get('/logout', 'Index#logout');
         $router->get('/authentication', 'Index#authentication');
+        $router->get('/intervention/create', 'Intervention#create');
         //$router->get('/intervention/:id', "Intervention#getIntervention")->with('id', '[0-9]+');
         $router->run();
     }

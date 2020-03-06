@@ -1,66 +1,100 @@
+<div class="row col-md-12 py-4">
+    <div class="center-block col-md-5">
+        <h1 class="text-center">Création d'intervention</h1>
+        <form>
+            <div class="p-5 rounded" style="background: #dce8f1">
+                <div class="form-group">
+                    <label>Numéro d'intervention</label>
+                    <input type="text" class="form-control" name="interventionNumber" placeholder="Numéro">
+                    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label>Commune d'intervention</label>
+                    <input type="text" class="form-control" id="town" placeholder="Commune">
+                </div>
+                <div class="form-group">
+                    <label>Adresse d'intervention</label>
+                    <input type="text" class="form-control" id="adress" placeholder="Adresse">
+                </div>
+                <div class="form-group">
+                    <label>Adresse d'intervention</label>
+                    <input type="text" class="form-control" id="adress" placeholder="Adresse">
+                </div>
+                <div class="form-group">
+                    <label>Type d'intervention</label>
+                    <input type="text" class="form-control" id="type" placeholder="Type">
+                </div>
+                <div class="form-group">
+                    <label>Requerant</label>
+                    <select class="form-control" name="applicant">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date et heure de déclenchement</label>
+                    <input class="form-control" type="datetime-local" name="beginDate" value="2020-08-19T13:45:00">
+                </div>
+                <div id="lastElement" class="form-group">
+                    <label>Date et heure de fin</label>
+                    <input class="form-control" type="datetime-local" name="endDate" value="2020-08-19T13:45:00">
+                </div>
 
-<div class="container" style="background-color: aliceblue; padding-left: 50px; padding-top: 30px ">
-    <h1 style="margin-bottom: 20px">Créer intervention</h1>
-    <div class="form-group row">
-        <label for="numeroIntervention">Numero intervention</label>
-        <div class="col-sm-10">
-            <input  type="text"  class="form-control" name="numeroIntervention" placeholder="Numero intervention">
-        </div>
+                <! -- Block appear after adding a new vehicle  -->
+                <!--<div class="center-block border border-secondary rounded p-3 m-3">
+                    <div class="form-group">
+                        <label>Nom de l'engin</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Date et heure de départ</label>
+                        <input class="form-control" type="datetime-local" name="beginDate" value="2020-08-19T13:45:00">
+                    </div>
+                    <div class="form-group">
+                        <label>Date et heure d'arrivées</label>
+                        <input class="form-control" type="datetime-local" name="beginDate" value="2020-08-19T13:45:00">
+                    </div>
+                    <div class="form-group">
+                        <label>Date et heure de retour</label>
+                        <input class="form-control" type="datetime-local" name="beginDate" value="2020-08-19T13:45:00">
+                    </div>
+                    <div class="form-check">
+                        <label>Ronde</label>
+                        <input type="checkbox" class="form-check-input mx-2" id="exampleCheck1">
+                    </div>
+                    <hr>
+                    <h5>Participants</h5>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="inputCity">Rôles</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Pompier</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <! -- End of block  -->
+
+                <button type="button" class="btn btn-md btn-info center-block py-2" id="buttonAddVehicle">Ajouter un vehicule</button>
+
+                <button type="submit" class="btn btn-primary mt-3">Confirmer</button>
+            </div>
+        </form>
     </div>
-    <div class="form-group row">
-        <label for="opm">OPM</label>
-        <div class="col-sm-10" style="margin-left: 105px">
-            <input type="text"  class="form-control" name="opm" placeholder="OPM">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="important">Important ?</label>
-        <div class="col-sm-10" style="margin-left: 80px">
-            <input type="checkbox"  name="important" placeholder="Numero intervention">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="date_debut">Date debut</label>
-        <div class="col-sm-10" style="margin-left: 65px">
-            <input  class="form-control" type="date" name="date_debut" >
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="date_fin">Date debut</label>
-        <div class="col-sm-10" style="margin-left: 65px">
-            <input  class="form-control" type="date" name="date_fin" >
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="inputAddress">Adresse</label>
-       <div class="col-sm-10" style="margin-left: 80px">
-           <input type="text"  class="form-control"  name="adresse" placeholder="chercher adresse" >
-       </div>
-    </div>
-    <div class="form-group row" >
-        <label for="type">Type</label>
-        <div class="col-sm-10" style="margin-left: 100px">
-            <input type="text"  class="form-control" name="type" placeholder="type" >
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="type">Requerant</label>
-        <div class="col-sm-10" style="margin-left: 65px">
-            <input type="text"  class="form-control" name="requerant" placeholder="chercher requerant" >
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="type">Responsable</label>
-        <div class="col-sm-10" style="margin-left: 45px">
-            <select custom-select my-1 mr-sm-2 name="responsable" class="custom-select mr-sm-2" >
-                <option selected>Choose...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-group row">
-        <input class="btn btn-primary" type="button" name="submit" value="Créer" >
-    </div>
-</diV>
+</div>
+
+<script src="/js/create.js"></script>

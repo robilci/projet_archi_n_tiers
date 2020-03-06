@@ -89,6 +89,7 @@ class InterventionController extends AppController {
     }
 
     public function create(){
+        session_start();
         $this->render('intervention.create');
     }
 
