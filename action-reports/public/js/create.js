@@ -20,7 +20,7 @@ function addVehicule() {
 
     // ----- field 1 - name of vehicle ------ //
     let vehicleNameDiv = createDivFormGroup();
-    let vehicleNameSelect = createSelect();
+    let vehicleNameSelect = createSelect(names[0]);
 
     vehicleNameSelect.appendChild(createOption());
     vehicleNameDiv.appendChild(createLabel("Nom de l'engin N°" + nbVehicles));
@@ -50,6 +50,7 @@ function addVehicule() {
     mainDiv.appendChild(patrol);
     mainDiv.appendChild(document.createElement("hr"));
     mainDiv.appendChild(titleParticipants)
+    mainDiv.appendChild(createRoleField("Conducteur", "1"));
 
     let titleVehicle = document.createElement("h4");
     titleVehicle.setAttribute("class", "my-4")
@@ -73,10 +74,10 @@ function createLabel(text){
     return label;
 }
 
-function createSelect(){
+function createSelect(name){
     let select = document.createElement("select");
     select.setAttribute("class", "form-control");
-    select.setAttribute("name", names[0]);
+    select.setAttribute("name", name);
     return select;
 }
 
@@ -112,6 +113,31 @@ function createCheckBoxField(){
     return div;
 }
 
-function createRoleField(roleName){
+function createRoleField(roleName, roleNumber){
+    let divRole = document.createElement("div");
+    divRole.setAttribute("class", "form-group col-md-5");
+    let labelRole = createLabel("Rôle");
+    let input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("class", "form-control");
+    input.setAttribute("id", "vehicleRole" + roleNumber);
+    input.setAttribute("value", roleName);
+    divRole.appendChild(labelRole);
+    divRole.appendChild(input);
 
+    let divFireFighter = document.createElement("div");
+    divFireFighter.setAttribute("class", "form-group col-md-4 my-2");
+    let labelFireFighter = createLabel("Pompiers");
+    let select = createSelect("vehicleRoleFireFighter" + roleNumber);
+    select.appendChild(createOption());
+    divFireFighter.appendChild(labelFireFighter);
+    divFireFighter.appendChild(select);
+
+    let mainDiv = document.createElement("div");
+    mainDiv.setAttribute("class", "form-row");
+    mainDiv.appendChild(divRole);
+    mainDiv.appendChild(divFireFighter);
+
+    return mainDiv;
 }
+

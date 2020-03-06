@@ -75,7 +75,7 @@
                     <h5>Participants</h5>
                     <div class="form-row">
                         <div class="form-group col-md-5">
-                            <label for="inputCity">Rôles</label>
+                            <label>Rôle</label>
                             <input type="text" class="form-control" id="inputCity">
                         </div>
                         <div class="form-group col-md-4">
