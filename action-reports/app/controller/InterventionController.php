@@ -36,11 +36,6 @@ class InterventionController extends AppController {
      *List of the last 10 interventions
      */
 
-    public function getIntervention()
-    {
-        var_dump($_POST['login']);
-    }
-
     public function listLastTen()
     {
 

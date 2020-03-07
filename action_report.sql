@@ -188,8 +188,9 @@ CREATE TABLE IF NOT EXISTS `vehicule` (
 
 DROP TABLE IF EXISTS `vehicule_role`;
 CREATE TABLE IF NOT EXISTS `vehicule_role` (
-  `vehicule_Code` varchar(10) NOT NULL,
+  `Vehicule_Code` varchar(10) NOT NULL,
   `Role_ID` int(11) NOT NULL,
+  `Role_Nom` varchar(64) NOT NULL,
   PRIMARY KEY (`vehicule_Code`,`Role_ID`),
   KEY `Role_ID` (`Role_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;

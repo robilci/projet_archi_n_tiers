@@ -20,6 +20,13 @@ class App
         $router->get('/logout', 'Index#logout');
         $router->get('/authentication', 'Index#authentication');
         $router->get('/intervention/create', 'Intervention#create');
+
+        // For ajax requests
+        $router->get('/ajax/vehicles', 'Vehicle#getVehicles');
+        $router->get('/ajax/firefighters', 'Firefighter#getFirefighters');
+        $router->post('/ajax/vehicles/roles', 'Vehicle#getVehiclesRoles');
+
+
         //$router->get('/intervention/:id', "Intervention#getIntervention")->with('id', '[0-9]+');
         $router->run();
     }

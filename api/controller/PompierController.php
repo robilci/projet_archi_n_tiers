@@ -46,5 +46,4 @@ class PompierController
             return $dat;
         }
     }
-
 }

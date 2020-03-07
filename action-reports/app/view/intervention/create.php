@@ -97,4 +97,4 @@
     </div>
 </div>
 
-<script src="/js/create.js"></script>
+<script src="/js/create.js" charset="UTF-8"></script>

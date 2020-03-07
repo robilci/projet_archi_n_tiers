@@ -20,6 +20,7 @@
                     </div>";
                 }
             ?>
+
             <input type="text" id="login" class="fadeIn second" name="email" placeholder="login">
             <input type="text" id="password" class="fadeIn third" name="pass" placeholder="password">
             <input type="submit" class="fadeIn fourth" value="Log In">

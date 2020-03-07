@@ -4,6 +4,8 @@
 namespace App\Controller;
 
 
+use App\App;
+
 /**
  * Class AppController
  * @package App\Controller
