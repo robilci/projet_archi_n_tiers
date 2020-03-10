@@ -88,6 +88,17 @@ class InterventionController extends AppController {
         $this->render('intervention.create');
     }
 
+    public function confirm(){
+        $nbVehicle = $_POST["nbVehicle"];
+        
+        for($i = 0; $i < $nbVehicle; $i++){
+            $nbRoles = $_POST["roleNumber" + $i];
+            for($y = 0; $y < $nbRoles; $y++){
+
+            }
+        }
+    }
+
 
 
 }

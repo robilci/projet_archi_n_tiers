@@ -20,6 +20,7 @@ class App
         $router->get('/logout', 'Index#logout');
         $router->get('/authentication', 'Index#authentication');
         $router->get('/intervention/create', 'Intervention#create');
+        $router->post('/intervention/create/confirm', 'Intervention#confirm');
 
         // For ajax requests
         $router->get('/ajax/vehicles', 'Vehicle#getVehicles');
