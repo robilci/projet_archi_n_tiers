@@ -39,6 +39,7 @@ class Synchronization
         $this->copyFireFighters();
         $this->copyVehicles();
         $this->copyVehiclesAndRoles();
+        $this->copyTypesIntervention();
     }
 
     private function copyRights()
@@ -63,6 +64,10 @@ class Synchronization
 
     private function copyVehiclesAndRoles(){
         $this->copyInsert("type_vehicule_role", "vehicule_role", ["TV_CODE", "ROLE_ID", "ROLE_NAME"], ["Vehicule_Code", "Role_ID", "Role_Nom"]);
+    }
+
+    private function copyTypesIntervention(){
+        $this->copyInsert("type_intervention", "type_intervention", ["TI_CODE", "TI_DESCRIPTION"], ["TI_Code", "Description"]);
     }
 
     private function copyInsert($sourceTable, $destinationTable, $sourceKeys, $destinationKeys)

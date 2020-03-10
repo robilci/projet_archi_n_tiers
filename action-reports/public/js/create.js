@@ -9,9 +9,37 @@ let nbVehicles = 1;
 let lastElement = document.getElementById("lastElement");
 let xmlhttpVehiclesName;
 let xmlhttpVehiclesRoles;
+let xmlhttpResponsible;
 let selectedVehicle = 1;
 let divRolesName = "roleVehicles";
 let mainDivVehicleName = "divVehicle";
+
+let responsible = document.getElementById("responsible");
+if (window.XMLHttpRequest)
+{   // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttpResponsible=new XMLHttpRequest();
+}
+else
+{   // code for IE6, IE5
+    xmlhttpResponsible=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+xmlhttpResponsible.open("GET","/ajax/firefighters",true);
+xmlhttpResponsible.send();
+
+xmlhttpResponsible.onreadystatechange=function()
+{
+    if (xmlhttpResponsible.readyState === 4 && xmlhttpResponsible.status === 200)
+    {
+        let firefighters = JSON.parse(xmlhttpResponsible.responseText);
+        for(let i = 0; i < firefighters.length; i++){
+            let newOption = createOption(firefighters[i]["Prenom"] + " " + firefighters[i]["Nom"]);
+            newOption.setAttribute("value", firefighters[i]["Pompier_ID"]);
+            responsible.appendChild(newOption);
+        }
+    }
+}
+
 
 function addVehicule() {
 
@@ -229,7 +257,9 @@ function createRoleField(roleName, vehicleId){
         {
             let firefighters = JSON.parse(xmlhttpFirefighters.responseText);
             for(let i = 0; i < firefighters.length; i++){
-                select.appendChild(createOption(firefighters[i]["Prenom"] + " " + firefighters[i]["Nom"]));
+                let newOption = createOption(firefighters[i]["Prenom"] + " " + firefighters[i]["Nom"]);
+                newOption.setAttribute("value", firefighters[i]["Pompier_ID"]);
+                select.appendChild(newOption);
             }
         }
     }

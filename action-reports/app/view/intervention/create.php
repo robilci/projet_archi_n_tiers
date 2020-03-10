@@ -5,31 +5,32 @@
             <input id="nbVehicle" name="nbVehicle" type="text" style="display: none">
             <div class="p-5 rounded" style="background: #dce8f1">
                 <div class="form-group">
+                    <label>Responsable</label>
+                    <select class="form-control" id="responsible" name="responsible">
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Numéro d'intervention</label>
                     <input type="text" class="form-control" name="interventionNumber" placeholder="Numéro">
                     <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label>Commune d'intervention</label>
-                    <input type="text" class="form-control" id="town" placeholder="Commune">
+                    <input type="text" class="form-control" name="town" placeholder="Commune">
                 </div>
                 <div class="form-group">
                     <label>Adresse d'intervention</label>
-                    <input type="text" class="form-control" id="adress" placeholder="Adresse">
-                </div>
-                <div class="form-group">
-                    <label>Adresse d'intervention</label>
-                    <input type="text" class="form-control" id="adress" placeholder="Adresse">
+                    <input type="text" class="form-control" name="adress" placeholder="Adresse">
                 </div>
                 <div class="form-group">
                     <label>Type d'intervention</label>
-                    <input type="text" class="form-control" id="type" placeholder="Type">
+                    <input type="text" class="form-control" name="type" name="type" placeholder="Type">
                 </div>
                 <div class="form-group">
                     <label>Requerant</label>
                     <select class="form-control" name="applicant">
-                        <option>Alerte locale</option>
-                        <option>CODIS</option>
+                        <option value="1" selected="selected">Alerte locale</option>
+                        <option value="2">CODIS</option>
                     </select>
                 </div>
                 <div class="form-group">

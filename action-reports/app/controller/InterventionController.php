@@ -90,6 +90,27 @@ class InterventionController extends AppController {
 
     public function confirm(){
         $nbVehicle = $_POST["nbVehicle"];
+
+        if(!isset($_POST["important"]))
+            $_POST["important"] = 0;
+        else
+            $_POST["important"] = 1;
+
+        if(!isset($_POST["opm"]))
+            $_POST["opm"] = 0;
+        else
+            $_POST["opm"] = 1;
+
+        echo $_POST["applicant"];
+        echo $_POST["type"];
+        echo $_POST["important"];
+        echo $_POST["opm"];
+        echo $_POST["interventionNumber"];
+        echo $_POST["town"];
+        echo $_POST["adress"];
+        echo $_POST["beginDate"];
+        echo $_POST["endDate"];
+        echo " - responsable : ". $_POST["responsible"];
         
         for($i = 0; $i < $nbVehicle; $i++){
             $nbRoles = $_POST["roleNumber" + $i];

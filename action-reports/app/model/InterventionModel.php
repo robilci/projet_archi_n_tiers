@@ -21,6 +21,10 @@ class InterventionModel extends AppModel {
 
     }
 
+    public function createIntervention($number, $opm, $important, $beginDate, $endDate, $town, $adress, $applicant, $responsible, $type, ){
+
+    }
+
     /**
      *List of the last 10 interventions
      */
