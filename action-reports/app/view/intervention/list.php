@@ -17,30 +17,85 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h4>La liste de toutes les interventions</h4>
+		<?php 
+		if(isset($listIntervention))
+		{
+			?>
+            <h4>La liste des interventions</h4>
+		<?php 	
+		} if(isset($listTen))
+		{
+			?>
+            <h4>La liste des 10 dernieres interventions</h4>
+			
+		<?php  }?>
             <div class="table-responsive">
 
                 <table id="mytable" class="table table-bordred table-striped">
 
                     <thead>
 
-                    <th>EmployeID</th>
-                    <th>Last Name</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Afficher</th>
+                    <th>Numero</th>
+                    <th>Date début</th>
+                    <th>Date fin</th>
+                    <th>Adresse</th>
+                    <th>Nom responsable </th>
+                    <th>Prénom responsable</th>
+					<th>Commentaires</th>
+					<th>Etat</th>
+					<th>Visualiser</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                    
+						<?php if(isset($listIntervention))
+							{
+							
+								foreach($listIntervention as $val)
+								{
+									
+								
+							
+						?>
+						    <tr>
+                            <td><?php echo $val[0] ?></td>
+                            <td><?php echo $val[1] ?></td>
+                            <td><?php echo $val[2] ?></td>
+                            <td><?php echo $val[3] ?></td>
+							<td><?php echo $val[4] ?></td>
+							<td><?php echo $val[5] ?></td>
+                            <td><?php echo $val[6] ?></td>
+							<td><?php echo $val[7] ?></td>
+							
+						
+							
                             <td><p data-placement="top" data-toggle="tooltip" title="View"><a class="btn btn-info btn-xs" data-title="View" data-toggle="modal" data-target="#view" href=""><span class="glyphicon glyphicon-eye-open"></span></a></p></td>
                         </tr>
-
+	<?php } } ?>
+	
+		<?php if(isset($listTen))
+							{
+							
+								foreach($listTen as $val)
+								{
+									
+								
+							
+						?>
+						    <tr>
+                            <td><?php echo $val[0] ?></td>
+                            <td><?php echo $val[1] ?></td>
+                            <td><?php echo $val[2] ?></td>
+                            <td><?php echo $val[3] ?></td>
+							<td><?php echo $val[4] ?></td>
+							<td><?php echo $val[5] ?></td>
+                            <td><?php echo $val[6] ?></td>
+							<td><?php echo $val[7] ?></td>
+							
+						
+							
+                            <td><p data-placement="top" data-toggle="tooltip" title="View"><a class="btn btn-info btn-xs" data-title="View" data-toggle="modal" data-target="#view" href=""><span class="glyphicon glyphicon-eye-open"></span></a></p></td>
+                        </tr>
+	<?php } } ?>
                     </tbody>
 
                 </table>

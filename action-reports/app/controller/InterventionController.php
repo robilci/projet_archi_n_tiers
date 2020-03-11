@@ -28,19 +28,24 @@ class InterventionController extends AppController {
      * List of a specified intervention
      * @param $id
      */
-    public function listOne($id)
+    public function listOne()
     {
-       // $this->render('intervention.archived');
+		$interventionModel= new InterventionModel();
+		$result = $interventionModel->listOne();
+		//var_dump($result->fetchAll());
+	$this->render('intervention.list',["listIntervention" => $result->fetchAll()]);
     }
 
     /**
      *List of the last 10 interventions
      */
 
-    public function listLastTen()
+    public function lastTen()
     {
+		$interventionModel= new InterventionModel();
+		$result = $interventionModel->lastTen();
+        $this->render('intervention.list',["listTen" => $result->fetchAll()]);
 
-        $this->renderWithoutAuth('authentication');
     }
 
     /**
