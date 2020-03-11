@@ -105,6 +105,7 @@ function addVehicule() {
             hiddenInput.setAttribute("id", "role" + selectedVehicle);
             hiddenInput.setAttribute("name", "roleNumber" + selectedVehicle);
             hiddenInput.setAttribute("value", roles.length);
+            hiddenInput.setAttribute("readonly", "readonly");
             hiddenInput.setAttribute("style", "display: none");
             mainDivVehicle.appendChild(hiddenInput);
             for(let i = 0; i < roles.length; i++){
@@ -235,7 +236,7 @@ function createRoleField(roleName, vehicleId, roleId){
     let divFireFighter = document.createElement("div");
     divFireFighter.setAttribute("class", "form-group col-md-4 my-2");
     let labelFireFighter = createLabel("Pompiers");
-    let select = createSelect("vehicleRoleFireFighter" + vehicleId);
+    let select = createSelect("vehicleRoleFireFighter" + vehicleId + "-" + roleId);
 
     let xmlhttpFirefighters;
 

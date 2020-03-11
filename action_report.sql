@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `intervention_vehicule` (
   `Vehicule_Code` varchar(10) NOT NULL,
   `Intervention_ID` int(11) NOT NULL,
   `Date_Depart` datetime NOT NULL,
-  `Date_Arrive` datetime NOT NULL,
+  `Date_Arrivee` datetime NOT NULL,
   `Date_Retour` datetime NOT NULL,
   PRIMARY KEY (`Vehicule_Code`,`Intervention_ID`),
   KEY `Intervention_ID` (`Intervention_ID`)
@@ -116,14 +116,15 @@ CREATE TABLE IF NOT EXISTS `pompier` (
 
 DROP TABLE IF EXISTS `pompier_roles`;
 CREATE TABLE IF NOT EXISTS `pompier_roles` (
+  `Pompier_Role_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Pompier_ID` int(11) NOT NULL,
   `Vehicule_Code` varchar(10) NOT NULL,
   `Intervention_ID` int(11) NOT NULL,
-  `Role_ID` int(11) NOT NULL,
-  PRIMARY KEY (`Pompier_ID`,`Vehicule_Code`,`Intervention_ID`),
+  `Role` varchar(64) NOT NULL,
+  PRIMARY KEY (`Pompier_Role_ID`),
+  KEY `Pompier_ID` (`Pompier_ID`),
   KEY `Vehicule_Code` (`Vehicule_Code`),
-  KEY `Intervention_ID` (`Intervention_ID`),
-  KEY `Role_ID` (`Role_ID`)
+  KEY `Intervention_ID` (`Intervention_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

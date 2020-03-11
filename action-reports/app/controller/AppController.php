@@ -41,5 +41,4 @@ class AppController extends Controller {
             return $dat;
         }
     }
-
 }

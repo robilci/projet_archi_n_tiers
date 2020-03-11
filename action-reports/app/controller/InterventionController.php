@@ -107,6 +107,7 @@ class InterventionController extends AppController {
 
         $vehicles[][] = null;
         $roles[][] = null;
+        $firefighters[][] = null;
         $nbVehicle = $_POST["nbVehicle"];
 
         for($i = 0; $i < $nbVehicle; $i++){
@@ -125,9 +126,17 @@ class InterventionController extends AppController {
             }
         }
 
+        for($i = 0; $i < $nbVehicle; $i++){
+            $id = $i + 1;
+            $nbRoles = $_POST["roleNumber". $id];
+            for($y = 0; $y < $nbRoles; $y++){
+                $firefighters[$i][$y] = $_POST["vehicleRoleFireFighter". $id ."-". $y];
+            }
+        }
+
         $model = new InterventionModel();
         $model->createIntervention($_POST["interventionNumber"], $_POST["opm"], $_POST["important"], $_POST["beginDate"], $_POST["endDate"],
-            $_POST["town"], $_POST["adress"], $_POST["type"], $_POST["applicant"], $_POST["responsible"], $_POST["comment"], $vehicles, $roles);
+            $_POST["town"], $_POST["adress"], $_POST["type"], $_POST["applicant"], $_POST["responsible"],  mb_convert_encoding($_POST["comment"], "latin1", "UTF-8"), $vehicles, $roles, $firefighters);
 
         $this->render("intervention.list", ["intervention" => true]);
     }
