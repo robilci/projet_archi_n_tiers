@@ -28,6 +28,6 @@ namespace App\controller;
      }
      public function changePassword()
      {
-$this->render('user.password');
+        $this->render('user.password');
      }
  }

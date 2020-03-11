@@ -15,8 +15,24 @@
     </div>
     <!--search bar --->
 
+
     <div class="row">
         <div class="col-md-12">
+
+            <?php
+            if(isset($intervention)){
+                if($intervention === true){
+                    echo'
+                        <div class="alert alert-primary alert-dismissible show my-5" role="alert">
+                            Intervention créee avec succès !
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    ';
+                }
+            }
+            ?>
             <h4>La liste de toutes les interventions</h4>
             <div class="table-responsive">
 

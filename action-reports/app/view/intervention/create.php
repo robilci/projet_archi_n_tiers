@@ -9,6 +9,17 @@
                     <select class="form-control" id="responsible" name="responsible">
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <label>Type d'intervention</label>
+                    <select class="form-control" name="type">
+                        <?php
+                            for($i = 0; $i < sizeof($types); $i++){
+                                echo '<option value="' .$types[$i]["TI_Code"] .'">'. $types[$i]["Description"] .'</option>';
+                            }
+                        ?>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label>Numéro d'intervention</label>
                     <input required="required" type="text" class="form-control" name="interventionNumber" placeholder="Numéro">
@@ -20,10 +31,6 @@
                 <div class="form-group">
                     <label>Adresse d'intervention</label>
                     <input required="required" type="text" class="form-control" name="adress" placeholder="Adresse">
-                </div>
-                <div class="form-group">
-                    <label>Type d'intervention</label>
-                    <input required="required" type="text" class="form-control" name="type" name="type" placeholder="Type">
                 </div>
                 <div class="form-group">
                     <label>Requerant</label>

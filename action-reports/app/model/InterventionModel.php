@@ -25,7 +25,20 @@ class InterventionModel extends AppModel {
         $sqlIntervention = 'INSERT INTO intervention (Numero, OPM, Important, Date_Debut, Date_Fin, Adresse, Type_ID, Requerant_ID, Responsable_ID, Commentaire, Etat)
                                 VALUES ("'. $number .'", "'. $opm .'", "'. $important .'", "'. $beginDate .'", "'. $endDate .'", "'. $town. ' - '. $adress .'",
                                  "'. $typeID .'", "'. $applicantId .'", "'. $responsibleID .'", "'. $comment .'", "A valider")';
-        echo $sqlIntervention;
+        Database::getPDO()->query($sqlIntervention);
+
+        $sqlVehicles = "SELECT Intervention_ID FROM intervention ORDER BY Intervention_ID DESC LIMIT 1";
+        $result = Database::getPDO()->query($sqlVehicles)->fetch();
+        $idIntervention = $result["Intervention_ID"];
+
+        $sqlVehicles = 'INSERT INTO intervention_vehicule (Vehicule_Code, Intervention_ID, Date_Depart, Date_Arrivee, Date_Retour)
+                        VALUES';
+
+    }
+
+    public function getTypes(){
+        $result = Database::getPDO()->query("SELECT * FROM type_intervention");
+        return $result->fetchAll();
     }
 
     /**

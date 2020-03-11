@@ -18,3 +18,5 @@ if($Auth->user('Prenom')):?>
 <?php else: ?>
     <li> <a href="/"> Se connecter  </a></li>
 <?php endif ?>
+
+

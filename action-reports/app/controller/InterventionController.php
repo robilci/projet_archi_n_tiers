@@ -86,10 +86,14 @@ class InterventionController extends AppController {
 
     public function create(){
         session_start();
-        $this->render('intervention.create');
+        $model = new InterventionModel();
+        $types = $model->getTypes();
+        $types = $this->convert_from_latin1_to_utf8_recursively($types);
+        $this->render('intervention.create', ["types" => $types]);
     }
 
     public function confirm(){
+        session_start();
 
         if(!isset($_POST["important"]))
             $_POST["important"] = 0;
@@ -121,12 +125,11 @@ class InterventionController extends AppController {
             }
         }
 
-        var_dump($vehicles);
-        var_dump($roles);
-
         $model = new InterventionModel();
         $model->createIntervention($_POST["interventionNumber"], $_POST["opm"], $_POST["important"], $_POST["beginDate"], $_POST["endDate"],
             $_POST["town"], $_POST["adress"], $_POST["type"], $_POST["applicant"], $_POST["responsible"], $_POST["comment"], $vehicles, $roles);
+
+        $this->render("intervention.list", ["intervention" => true]);
     }
 
 }
