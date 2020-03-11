@@ -47,12 +47,15 @@ class AuthenticationController extends AppController
                 $error = "Mauvais identifiant ou mot de passe";
                 $this->renderWithoutAuth('authentication', compact('error'));
             } else {
+				//var_dump($json);
+				$_SESSION["id"] = $json["P_ID"];
                 $_SESSION["email"] = $json["P_EMAIL"];
                 $_SESSION["firstname"] = $json["P_PRENOM"];
                 $_SESSION["lastname"] = $json["P_NOM"];
                 $_SESSION["exist"] = true;
 
-                $this->render('intervention.list');
+                $InterventionC = new InterventionController();
+				$InterventionC->lastTen();
             }
         } else {
             $this->render('intervention.list');

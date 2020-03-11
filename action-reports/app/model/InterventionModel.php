@@ -16,9 +16,19 @@ class InterventionModel extends AppModel {
      * List of a specified intervention
      * @param $id
      */
-    public function listOne($id)
+    public function listOne()
     {
-
+		if(!isset($_SESSION))
+		{
+			session_start();
+		}
+		 $query = "SELECT Numero, Date_Debut, Date_Fin, Adresse, pompier.Nom,pompier.Prenom, Commentaire,Etat 
+					FROM intervention 
+					INNER JOIN pompier ON pompier.Pompier_ID = intervention.Responsable_ID
+					WHERE pompier.Pompier_ID = ".$_SESSION["id"];
+        $result = Database::getPDO()->query($query);
+		//var_dump($result);
+		return $result;
     }
 
     public function createIntervention($number, $opm, $important, $beginDate, $endDate, $town, $adress, $typeID, $applicantId, $responsibleID, $comment, $vehicles, $roles, $firefighters){
@@ -65,8 +75,22 @@ class InterventionModel extends AppModel {
     /**
      *List of the last 10 interventions
      */
-    public function listLastTen()
+    public function lastTen()
     {
+			if(!isset($_SESSION))
+		{
+			session_start();
+		}
+	 $query ="SELECT Numero, Date_Debut, Date_Fin, Adresse, pompier.Nom,pompier.Prenom, Commentaire,Etat 
+FROM intervention 
+INNER JOIN pompier ON pompier.Pompier_ID = intervention.Responsable_ID 
+WHERE pompier.Pompier_ID = ".$_SESSION["id"]."
+ORDER By intervention.Date_Fin DESC
+LIMIT 10";
+
+    $result = Database::getPDO()->query($query);
+		//var_dump($result);
+		return $result;
 
     }
 
@@ -109,6 +133,7 @@ class InterventionModel extends AppModel {
     {
 
     }
+	
 
 }
 

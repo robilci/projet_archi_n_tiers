@@ -27,7 +27,12 @@ class App
         $router->get('/ajax/firefighters', 'Firefighter#getFirefighters');
         $router->post('/ajax/vehicles/roles', 'Vehicle#getVehiclesRoles');
 
-
+		// Route pour lister les interventions	d'un pompier
+		$router->get('/listInterventions', 'Intervention#listOne');
+		
+		//Route pour lister les 10 premiers
+		$router->get('/list10Interventions', 'Intervention#lastTen');
+		
         //$router->get('/intervention/:id', "Intervention#getIntervention")->with('id', '[0-9]+');
         $router->run();
     }
