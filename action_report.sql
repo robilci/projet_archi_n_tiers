@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `intervention` (
   `Important` tinyint(1) NOT NULL,
   `Date_Debut` datetime NOT NULL,
   `Date_Fin` datetime NOT NULL,
-  `Adresse_ID` int(11) NOT NULL,
+  `Adresse` varchar(255) NOT NULL,
   `Type_ID` varchar(5) NOT NULL,
   `Requerant_ID` int(11) NOT NULL,
   `Responsable_ID` int(11) NOT NULL,
@@ -73,7 +73,6 @@ CREATE TABLE IF NOT EXISTS `intervention` (
   `Etat` varchar(64),
   PRIMARY KEY (`Intervention_ID`),
   KEY `Requerant_ID` (`Requerant_ID`),
-  KEY `Adresse_ID` (`Adresse_ID`),
   KEY `Type_ID` (`Type_ID`),
   KEY `Responsable_ID` (`Responsable_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;

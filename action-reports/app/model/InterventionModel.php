@@ -21,8 +21,11 @@ class InterventionModel extends AppModel {
 
     }
 
-    public function createIntervention($number, $opm, $important, $beginDate, $endDate, $town, $adress, $applicant, $responsible, $type, ){
-
+    public function createIntervention($number, $opm, $important, $beginDate, $endDate, $town, $adress, $typeID, $applicantId, $responsibleID, $comment, $vehicles, $roles){
+        $sqlIntervention = 'INSERT INTO intervention (Numero, OPM, Important, Date_Debut, Date_Fin, Adresse, Type_ID, Requerant_ID, Responsable_ID, Commentaire, Etat)
+                                VALUES ("'. $number .'", "'. $opm .'", "'. $important .'", "'. $beginDate .'", "'. $endDate .'", "'. $town. ' - '. $adress .'",
+                                 "'. $typeID .'", "'. $applicantId .'", "'. $responsibleID .'", "'. $comment .'", "A valider")';
+        echo $sqlIntervention;
     }
 
     /**

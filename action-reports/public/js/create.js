@@ -108,7 +108,7 @@ function addVehicule() {
             hiddenInput.setAttribute("style", "display: none");
             mainDivVehicle.appendChild(hiddenInput);
             for(let i = 0; i < roles.length; i++){
-                mainDivVehicle.appendChild(createRoleField(roles[i]["Role_Nom"], selectedVehicle));
+                mainDivVehicle.appendChild(createRoleField(roles[i]["Role_Nom"], selectedVehicle, i));
             }
         }
     }
@@ -219,7 +219,7 @@ function createCheckBoxField(){
     return div;
 }
 
-function createRoleField(roleName, vehicleId){
+function createRoleField(roleName, vehicleId, roleId){
     let divRole = document.createElement("div");
     divRole.setAttribute("class", "form-group col-md-5");
     let labelRole = createLabel("Rôle");
@@ -227,7 +227,7 @@ function createRoleField(roleName, vehicleId){
     input.setAttribute("type", "text");
     input.setAttribute("class", "form-control");
     input.setAttribute("readonly", true);
-    input.setAttribute("name", "vehicleRole" + vehicleId);
+    input.setAttribute("name", "vehicleRole" + vehicleId + "-" + roleId);
     input.setAttribute("value", roleName);
     divRole.appendChild(labelRole);
     divRole.appendChild(input);

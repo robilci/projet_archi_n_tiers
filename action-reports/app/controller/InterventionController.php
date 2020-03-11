@@ -2,6 +2,7 @@
 
 namespace App\controller;
 
+use App\Model\InterventionModel;
 use App\utils\database\Database;
 
 /**
@@ -89,7 +90,6 @@ class InterventionController extends AppController {
     }
 
     public function confirm(){
-        $nbVehicle = $_POST["nbVehicle"];
 
         if(!isset($_POST["important"]))
             $_POST["important"] = 0;
@@ -101,25 +101,32 @@ class InterventionController extends AppController {
         else
             $_POST["opm"] = 1;
 
-        echo $_POST["applicant"];
-        echo $_POST["type"];
-        echo $_POST["important"];
-        echo $_POST["opm"];
-        echo $_POST["interventionNumber"];
-        echo $_POST["town"];
-        echo $_POST["adress"];
-        echo $_POST["beginDate"];
-        echo $_POST["endDate"];
-        echo " - responsable : ". $_POST["responsible"];
-        
-        for($i = 0; $i < $nbVehicle; $i++){
-            $nbRoles = $_POST["roleNumber" + $i];
-            for($y = 0; $y < $nbRoles; $y++){
+        $vehicles[][] = null;
+        $roles[][] = null;
+        $nbVehicle = $_POST["nbVehicle"];
 
+        for($i = 0; $i < $nbVehicle; $i++){
+            $id = $i + 1;
+            $vehicles[$i][0] = $_POST["vehicleName". $id];
+            $vehicles[$i][1] = $_POST["vehicleDateDeparture". $id];
+            $vehicles[$i][2] = $_POST["vehicleDateArrival". $id];
+            $vehicles[$i][3] = $_POST["vehicleDateReturn". $id];
+        }
+
+        for($i = 0; $i < $nbVehicle; $i++){
+            $id = $i + 1;
+            $nbRoles = $_POST["roleNumber". $id];
+            for($y = 0; $y < $nbRoles; $y++){
+                $roles[$i][$y] = $_POST["vehicleRole". $id ."-". $y];
             }
         }
+
+        var_dump($vehicles);
+        var_dump($roles);
+
+        $model = new InterventionModel();
+        $model->createIntervention($_POST["interventionNumber"], $_POST["opm"], $_POST["important"], $_POST["beginDate"], $_POST["endDate"],
+            $_POST["town"], $_POST["adress"], $_POST["type"], $_POST["applicant"], $_POST["responsible"], $_POST["comment"], $vehicles, $roles);
     }
-
-
 
 }

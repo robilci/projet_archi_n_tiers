@@ -11,20 +11,19 @@
                 </div>
                 <div class="form-group">
                     <label>Numéro d'intervention</label>
-                    <input type="text" class="form-control" name="interventionNumber" placeholder="Numéro">
-                    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <input required="required" type="text" class="form-control" name="interventionNumber" placeholder="Numéro">
                 </div>
                 <div class="form-group">
                     <label>Commune d'intervention</label>
-                    <input type="text" class="form-control" name="town" placeholder="Commune">
+                    <input required="required" type="text" class="form-control" name="town" placeholder="Commune">
                 </div>
                 <div class="form-group">
                     <label>Adresse d'intervention</label>
-                    <input type="text" class="form-control" name="adress" placeholder="Adresse">
+                    <input required="required" type="text" class="form-control" name="adress" placeholder="Adresse">
                 </div>
                 <div class="form-group">
                     <label>Type d'intervention</label>
-                    <input type="text" class="form-control" name="type" name="type" placeholder="Type">
+                    <input required="required" type="text" class="form-control" name="type" name="type" placeholder="Type">
                 </div>
                 <div class="form-group">
                     <label>Requerant</label>
@@ -42,6 +41,11 @@
                     <input class="form-control" type="datetime-local" name="endDate" value="2020-08-19T13:45:00">
                 </div>
 
+                <div class="form-group">
+                    <label>Commentaire</label>
+                    <textarea class="form-control" name="comment" rows="3"></textarea>
+                </div>
+
                 <div id="lastElement" class="row">
                     <div class="form-check">
                         <label>Important</label>
@@ -53,7 +57,6 @@
                         <input name="opm" type="checkbox" class="form-check-input mx-2" >
                     </div>
                     <br>
-                    <hr>
                 </div>
 
                 <! -- Block appear here after adding a new vehicle  -->
