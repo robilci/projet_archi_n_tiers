@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label>Numéro d'intervention</label>
-                    <input required="required" type="text" class="form-control" name="interventionNumber" placeholder="Numéro">
+                    <input required="required" type="number" class="form-control" name="interventionNumber" placeholder="Numéro">
                 </div>
                 <div class="form-group">
                     <label>Commune d'intervention</label>

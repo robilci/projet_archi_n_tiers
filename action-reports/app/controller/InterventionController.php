@@ -32,8 +32,7 @@ class InterventionController extends AppController {
     {
 		$interventionModel= new InterventionModel();
 		$result = $interventionModel->listOne();
-		//var_dump($result->fetchAll());
-	$this->render('intervention.list',["listIntervention" => $result->fetchAll()]);
+	    $this->render('intervention.list',["listIntervention" => $result->fetchAll()]);
     }
 
     /**
@@ -45,7 +44,28 @@ class InterventionController extends AppController {
 		$interventionModel= new InterventionModel();
 		$result = $interventionModel->lastTen();
         $this->render('intervention.list',["listTen" => $result->fetchAll()]);
+    }
 
+    public function export(){
+        $interventions = null;
+        $model = new InterventionModel();
+        if(!isset($_SESSION))
+            session_start();
+
+        if(isset($_SESSION["id"])) {
+            $interventions = $model->getInterventions($_SESSION["id"]);
+
+            $message = null;
+
+            if ($this->export_data_to_csv($interventions)) {
+                $message = "Fichier csv crée avec succès !";
+            } else {
+                $message = "Erreur dans l'exportation d'interventions !";
+            }
+
+            $result = $model->lastTen();
+            $this->render('intervention.list', ["listTen" => $result->fetchAll(), "message" => $message, "intervention" => true]);
+        }
     }
 
     /**
@@ -144,6 +164,23 @@ class InterventionController extends AppController {
             $_POST["town"], $_POST["adress"], $_POST["type"], $_POST["applicant"], $_POST["responsible"],  mb_convert_encoding($_POST["comment"], "latin1", "UTF-8"), $vehicles, $roles, $firefighters);
 
         $this->render("intervention.list", ["intervention" => true]);
+    }
+
+    private function export_data_to_csv($data, $filename='export.csv', $delimiter = ';', $enclosure = '"') {
+        $result = true;
+        try {
+            $fp = fopen($filename, 'w');
+            fputs($fp, $bom = (chr(0xEF) . chr(0xBB) . chr(0xBF)));
+            fputcsv($fp, array_keys($data[0]), $delimiter, $enclosure);
+            foreach ($data as $fields) {
+                fputcsv($fp, $fields, $delimiter, $enclosure);
+            }
+            fclose($fp);
+        } catch (\Exception $e){
+            print_r($e);
+            $result = false;
+        }
+        return $result;
     }
 
 }

@@ -15,8 +15,28 @@
     </div>
     <!--search bar --->
 
+    <?php
 
-    <div class="row">
+    if(isset($intervention)){
+        if($intervention) {
+            echo '
+            <div class="alert alert-info alert-dismissible show my-2" role = "alert" >';
+            if (isset($message)){
+                echo $message;
+            } else
+            {
+                echo 'Intervention créee avec succès !';
+            }
+            echo '<button type = "button" class="close" data-dismiss = "alert" aria-label = "Close" >
+                <span aria-hidden = "true" >&times;</span >
+            </button >
+        </div>';
+            }
+        }
+    ?>
+
+
+    <div class="row my-2">
         <div class="col-md-12">
 		<?php 
 		if(isset($listIntervention))

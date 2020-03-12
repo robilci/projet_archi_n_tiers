@@ -22,12 +22,11 @@ class InterventionModel extends AppModel {
 		{
 			session_start();
 		}
-		 $query = "SELECT Numero, Date_Debut, Date_Fin, Adresse, pompier.Nom,pompier.Prenom, Commentaire,Etat 
+		 $query = "SELECT Numero, Date_Debut, Date_Fin, Adresse, pompier.Nom, pompier.Prenom, Commentaire, Etat 
 					FROM intervention 
 					INNER JOIN pompier ON pompier.Pompier_ID = intervention.Responsable_ID
 					WHERE pompier.Pompier_ID = ".$_SESSION["id"];
         $result = Database::getPDO()->query($query);
-		//var_dump($result);
 		return $result;
     }
 
@@ -44,32 +43,44 @@ class InterventionModel extends AppModel {
         $sqlVehicles = 'INSERT INTO intervention_vehicule (Vehicule_Code, Intervention_ID, Date_Depart, Date_Arrivee, Date_Retour)
                         VALUES ';
 
-        for($i = 0; $i < sizeof($vehicles); $i++){
-            $sqlVehicles = $sqlVehicles. '("'.  $vehicles[$i][0] .'", "'. $idIntervention .'", "'. $vehicles[$i][1] .'", "'. $vehicles[$i][2] .'", "'. $vehicles[$i][3] .'")';
-            if($i !== sizeof($vehicles) - 1){
-                $sqlVehicles = $sqlVehicles. ",";
+        if($vehicles[0][0] == null)
+            $vehicles = [];
+        else{
+            for($i = 0; $i < sizeof($vehicles); $i++){
+                $sqlVehicles = $sqlVehicles. '("'.  $vehicles[$i][0] .'", "'. $idIntervention .'", "'. $vehicles[$i][1] .'", "'. $vehicles[$i][2] .'", "'. $vehicles[$i][3] .'")';
+                if($i !== sizeof($vehicles) - 1){
+                    $sqlVehicles = $sqlVehicles. ",";
+                }
             }
-        }
 
-        Database::getPDO()->query($sqlVehicles);
+            Database::getPDO()->query($sqlVehicles);
 
-        $sqlRoles = 'INSERT INTO pompier_roles (Pompier_ID, Vehicule_Code, Intervention_ID, Role)
+            $sqlRoles = 'INSERT INTO pompier_roles (Pompier_ID, Vehicule_Code, Intervention_ID, Role)
                     VALUES ';
 
-        for($i = 0; $i < sizeof($vehicles); $i++){
-            for($y = 0; $y < sizeof($roles[$i]); $y++){
-                $sqlRoles = $sqlRoles . '("'. $firefighters[$i][$y] .'", "'. $vehicles[$i][0] .'", "'. $idIntervention .'", "'. mb_convert_encoding($roles[$i][$y], "latin1", "UTF-8") .'"),';
+            for($i = 0; $i < sizeof($vehicles); $i++){
+                for($y = 0; $y < sizeof($roles[$i]); $y++){
+                    $sqlRoles = $sqlRoles . '("'. $firefighters[$i][$y] .'", "'. $vehicles[$i][0] .'", "'. $idIntervention .'", "'. mb_convert_encoding($roles[$i][$y], "latin1", "UTF-8") .'"),';
+                }
             }
+
+            $sqlRoles = substr($sqlRoles,0,-1);
+
+            Database::getPDO()->query($sqlRoles);
         }
-
-        $sqlRoles = substr($sqlRoles,0,-1);
-
-        Database::getPDO()->query($sqlRoles);
     }
 
     public function getTypes(){
         $result = Database::getPDO()->query("SELECT * FROM type_intervention");
         return $result->fetchAll();
+    }
+
+    public function getInterventions($userId){
+        $query = 'SELECT Numero, Date_Debut, Date_Fin, Adresse, pompier.Nom, pompier.Prenom, Commentaire, Etat
+					FROM intervention 
+					INNER JOIN pompier ON pompier.Pompier_ID = intervention.Responsable_ID
+					WHERE pompier.Pompier_ID = '.$userId;
+        return Database::getPDO()->query($query)->fetchAll();
     }
 
     /**

@@ -21,17 +21,16 @@ class App
         $router->get('/authentication', 'Index#authentication');
         $router->get('/intervention/create', 'Intervention#create');
         $router->post('/intervention/create/confirm', 'Intervention#confirm');
+        $router->get('/listInterventions', 'Intervention#listOne');
+        $router->get('/list10Interventions', 'Intervention#lastTen');
+        $router->get('/intervention/exportation', 'Intervention#export');
 
         // For ajax requests
         $router->get('/ajax/vehicles', 'Vehicle#getVehicles');
         $router->get('/ajax/firefighters', 'Firefighter#getFirefighters');
         $router->post('/ajax/vehicles/roles', 'Vehicle#getVehiclesRoles');
 
-		// Route pour lister les interventions	d'un pompier
-		$router->get('/listInterventions', 'Intervention#listOne');
-		
-		//Route pour lister les 10 premiers
-		$router->get('/list10Interventions', 'Intervention#lastTen');
+
 		
         //$router->get('/intervention/:id', "Intervention#getIntervention")->with('id', '[0-9]+');
         $router->run();

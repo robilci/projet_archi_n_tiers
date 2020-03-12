@@ -34,17 +34,11 @@ class Synchronization
     }
 
     public function run(){
-        $this->copyRights();
         $this->copyRoles();
         $this->copyFireFighters();
         $this->copyVehicles();
         $this->copyVehiclesAndRoles();
         $this->copyTypesIntervention();
-    }
-
-    private function copyRights()
-    {
-        $this->copyInsert("fonctionnalite", "droit", ["F_ID", "F_LIBELLE"], ["Droit_ID", "Description"]);
     }
 
     private function copyRoles()

@@ -1,8 +1,8 @@
 # projet_archi_n_tiers
-Projets développé par Dounya ENNECH, Beni MULUMBA, Samy BADACHE et Robin JAKUBCZAK.
+Projets développé par Dounya ENNECH, Samy BADACHE et Robin JAKUBCZAK.
 
 
-Afin de tester le site, veuillez suivre les différentes instructions :
+Afin de tester le site, veuillez suivre les différentes instructions suivantes :
 
 	- installez la base de données ebrigade
 	- créez une base de données sur MariaDB ayant pour nom action_reports (par exemple)
