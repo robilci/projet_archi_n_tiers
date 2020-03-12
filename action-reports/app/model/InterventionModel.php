@@ -13,22 +13,116 @@ class InterventionModel extends AppModel {
     }
 
     /**
-     * List of a specified intervention
+     * The rest of an intervention's informations
      * @param $id
      */
-    public function listOne()
+    public function I_otherInfos($id){
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $query = "SELECT intervention.OPM ,intervention.Important ,intervention.Numero,intervention.Date_Debut,intervention.Date_Fin,
+intervention.Adresse,intervention.Commentaire,intervention.Etat
+FROM intervention WHERE intervention.Intervention_ID=".$id;
+        $result = Database::getPDO()->query($query);
+        //var_dump($result);
+        return $result;
+
+    }
+
+    /**
+     * List of an intervention's firemen
+     * @param $id
+     */
+    public function I_pompiers($id)
     {
-		if(!isset($_SESSION))
-		{
-			session_start();
-		}
-		 $query = "SELECT Numero, Date_Debut, Date_Fin, Adresse, pompier.Nom, pompier.Prenom, Commentaire, Etat 
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $query = "SELECT pompier.Nom,pompier.Prenom ,pompier_roles.Vehicule_Code,role.Name
+FROM pompier_roles 
+INNER JOIN pompier on pompier_roles.Pompier_ID=pompier.Pompier_ID
+INNER JOIN role on role.Role_ID=pompier_roles.Role_ID
+WHERE pompier_roles.Intervention_ID=" . $id;
+        $result = Database::getPDO()->query($query);
+        //var_dump($result);
+        return $result;
+    }
+
+    /**
+     * an intervention's applicant
+     * @param $id
+     */
+    public function I_requerant($id)
+    {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $query = "SELECT requerant.Description FROM intervention 
+INNER JOIN requerant on requerant.Requerant_ID=intervention.Requerant_ID
+WHERE intervention.Intervention_ID=" . $id;
+        $result = Database::getPDO()->query($query);
+        //var_dump($result);
+        return $result;
+    }
+
+    /**
+     *  an intervention's responsable
+     * @param $id
+     */
+    public function I_esponsable($id)
+    {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $query = "SELECT pompier.Nom,pompier.Prenom FROM intervention INNER JOIN pompier
+on intervention.Responsable_ID=pompier.Pompier_ID
+WHERE intervention.Intervention_ID=" . $id;
+        $result = Database::getPDO()->query($query);
+        //var_dump($result);
+        return $result;
+
+    }
+
+    /**
+     * List of an intervention's vehicles
+     * @param $id
+     * @return false|\PDOStatement
+     */
+    public function I_vehicles($id)
+    {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $query = "SELECT 
+intervention_vehicule.Vehicule_Code,intervention_vehicule.Date_Depart,intervention_vehicule.Date_Arrivee,intervention_vehicule.Date_Retour ,
+vehicule.Description,vehicule.NbPlaces_Dispo,vehicule_role.Role_Nom
+
+from intervention 
+
+INNER join intervention_vehicule on intervention_vehicule.Intervention_ID=intervention.Intervention_ID
+INNER JOIN vehicule on vehicule.Vehicule_Code=intervention_vehicule.Vehicule_Code
+INNER JOIN vehicule_role on intervention_vehicule.Vehicule_Code=vehicule_role.Vehicule_Code
+WHERE intervention.Intervention_ID=" . $id;
+        $result = Database::getPDO()->query($query);
+        //var_dump($result);
+        return $result;
+    }
+
+    public function liste()
+    {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $query = "SELECT intervention.Intervention_ID ,Numero, Date_Debut, Date_Fin, Adresse, pompier.Nom,pompier.Prenom, Commentaire,Etat 
 					FROM intervention 
 					INNER JOIN pompier ON pompier.Pompier_ID = intervention.Responsable_ID
-					WHERE pompier.Pompier_ID = ".$_SESSION["id"];
+					WHERE pompier.Pompier_ID = " . $_SESSION["id"];
         $result = Database::getPDO()->query($query);
-		return $result;
+        //var_dump($result);
+        return $result;
     }
+
 
     public function createIntervention($number, $opm, $important, $beginDate, $endDate, $town, $adress, $typeID, $applicantId, $responsibleID, $comment, $vehicles, $roles, $firefighters){
         $sqlIntervention = 'INSERT INTO intervention (Numero, OPM, Important, Date_Debut, Date_Fin, Adresse, Type_ID, Requerant_ID, Responsable_ID, Commentaire, Etat)

@@ -23,16 +23,29 @@ class InterventionController extends AppController {
     public function listAll(){
         $this->renderWithoutAuth('intervention.list');
     }
-
     /**
      * List of a specified intervention
      * @param $id
      */
+
     public function listOne()
     {
-		$interventionModel= new InterventionModel();
-		$result = $interventionModel->listOne();
-	    $this->render('intervention.list',["listIntervention" => $result->fetchAll()]);
+        $interventionModel = new InterventionModel();
+        $responsable = $interventionModel->I_esponsable(1);
+        $vehicules = $interventionModel->I_vehicles(1);
+        $requerant = $interventionModel->I_requerant(1);
+        $pompiers = $interventionModel->I_pompiers(1);
+        $otherInfos=$interventionModel->I_otherInfos(1);
+        $this->render('intervention.single', ["responsable" => $responsable->fetch(\PDO::FETCH_OBJ), "listVehicles" => $vehicules->fetchAll(), "requerant" => $requerant->fetch(\PDO::FETCH_OBJ), "listPompiers" => $pompiers->fetchAll(), "otherInfos" => $otherInfos->fetch(\PDO::FETCH_OBJ)]);
+
+    }
+
+    public function liste()
+    {
+        $interventionModel = new InterventionModel();
+        $result = $interventionModel->liste();
+        //var_dump($result->fetchAll());
+        $this->render('intervention.list', ["listIntervention" => $result->fetchAll()]);
     }
 
     /**

@@ -21,8 +21,9 @@ class App
         $router->get('/authentication', 'Index#authentication');
         $router->get('/intervention/create', 'Intervention#create');
         $router->post('/intervention/create/confirm', 'Intervention#confirm');
-        $router->get('/listInterventions', 'Intervention#listOne');
+        $router->get('/listInterventions', 'Intervention#liste');
         $router->get('/list10Interventions', 'Intervention#lastTen');
+        $router->get('/oneIntervention', 'Intervention#listOne');
         $router->get('/intervention/exportation', 'Intervention#export');
 
         // For ajax requests
@@ -31,8 +32,6 @@ class App
         $router->post('/ajax/vehicles/roles', 'Vehicle#getVehiclesRoles');
 
 
-		
-        //$router->get('/intervention/:id', "Intervention#getIntervention")->with('id', '[0-9]+');
         $router->run();
     }
 
