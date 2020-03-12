@@ -4,9 +4,9 @@ Projets développé par Dounya ENNECH, Samy BADACHE et Robin JAKUBCZAK.
 
 Afin de tester le site, veuillez suivre les différentes instructions suivantes :
 
-	- installez la base de données ebrigade
+	- installez la base de données ebrigade sur MariaDB en vérifiant que le port correspond a celui qu'il y a dans api/database/config.php
 
-	- créez une base de données sur MariaDB ayant pour nom action_reports (par exemple) et importer le fichier action_reports.sql présent dans le dossier
+	- créez une base de données sur MariaDB ayant pour nom action_reports et choississez le "latin general ci" puis importer le fichier action_reports.sql présent dans le dossier
 
 	- Configurez la connexion à la base de donnée action_reports dans le fichier de configuration suivant : action_reports/app/utils/config/config.php
 
