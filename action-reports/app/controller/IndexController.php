@@ -16,6 +16,7 @@ class IndexController extends AppController
     public function authentication()
     {
         $this->logout();
+        $this->render('authentication');
     }
 
     public function logout(){

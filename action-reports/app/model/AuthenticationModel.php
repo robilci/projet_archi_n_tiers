@@ -20,7 +20,6 @@ class AuthenticationModel extends AppModel {
      */
     public function roles()
 {
-
     $query = "SELECT 	Droit_ID, Description FROM droit";
     $result =$this->dbo->getpdo()->prepare($query);
     $result->execute();

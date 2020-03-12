@@ -26,8 +26,10 @@ namespace App\controller;
      {
          $this->render('user.account');
      }
+
      public function changePassword()
      {
         $this->render('user.password');
      }
+
  }
