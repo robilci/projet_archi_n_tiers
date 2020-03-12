@@ -2,6 +2,8 @@
 
 namespace App\controller;
 
+use App\utils\database\Database;
+
 /**
  * Class InterventionController
  * @package App\controller
@@ -16,6 +18,7 @@ class InterventionController extends AppController {
     /**
      *List of all the interventions (regardless to their state)
      */
+
     public function listAll(){
         $this->render('intervention.list');
     }
@@ -26,7 +29,6 @@ class InterventionController extends AppController {
      */
     public function listOne($id)
     {
-        var_dump($_POST['login']);
        // $this->render('intervention.archived');
     }
 
@@ -51,6 +53,7 @@ class InterventionController extends AppController {
         $this->render('intervention.checked');
 
     }
+
 
     /**
      *List of the interventions to be validated
@@ -83,7 +86,5 @@ class InterventionController extends AppController {
     {
         $this->render('intervention.archived');
     }
-
-
 
 }

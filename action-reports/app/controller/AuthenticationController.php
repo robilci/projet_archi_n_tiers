@@ -2,7 +2,10 @@
 
 namespace App\controller;
 
-use App\Model\AuthentificationModel;
+
+use function MongoDB\BSON\toJSON;
+
+use App\Model\AuthenticationModel;
 use App\utils\database\Database;
 use App\utils\router\Route;
 
@@ -10,7 +13,8 @@ use App\utils\router\Route;
 /**
  * @package App\controller
  */
-class AuthentificationController extends AppController
+
+class AuthenticationController extends AppController
 {
 
     /**
@@ -21,13 +25,46 @@ class AuthentificationController extends AppController
      * @param $id - the id of the intervention
      */
 
+  
 
-    public function authentification()
+    public function authentication(){
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentication');
+		curl_setopt($curl,CURLOPT_POSTFIELDS,"email=".htmlspecialchars($_POST["email"])."&pass=".htmlspecialchars($_POST["pass"]));
+		
+		
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $json = json_decode($result, true);
+
+		if(empty($json)){
+		    $error = "Mauvais identifiant ou mot de passe";
+            $this->render('authentication', compact('error'));
+        } else {
+		    $_SESSION["email"] = $json["P_EMAIL"];
+            $_SESSION["firstname"] = $json["P_PRENOM"];
+            $_SESSION["lastname"] = $json["P_NOM"];
+            $this->getRights();
+            $this->render("intervention.list");
+        }
+    }
+
+    private function getRights(){
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, 'api/pompier/rights');
+        curl_setopt($curl,CURLOPT_POSTFIELDS,"email=".htmlspecialchars($_SESSION["email"]));
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $_SESSION["rights"] = json_decode($result, true);
+    }
+//pour tester la gestion des droits
+    public function authenticationDounya()
     {
         /*$email = "admin@mybrigade.org";
         $mdp = md5("1234");
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentification');
+        curl_setopt($curl, CURLOPT_URL, 'api/pompier/authentication');
         curl_setopt($curl,CURLOPT_POSTFIELDS,"email=".$email."&mdp=".$mdp);
 
 
@@ -41,8 +78,8 @@ class AuthentificationController extends AppController
         //  curl_close($curl);
 
         $prenom = $_POST['login'];
-        $m = new AuthentificationModel();
-        $data = $m->authentification($prenom);
+        $m = new AuthenticationModel();
+        $data = $m->authentication($prenom);
         if (count($data) > 0) {
             $_SESSION['Auth'] = $data[0];
             $this->render('home');
@@ -51,12 +88,12 @@ class AuthentificationController extends AppController
     }
     /**
      * Specify the range of rights
-     * @param $rang the rights range
+     * @param $rang - the rights range
      * @return bool
      */
     public function allow($rang)
     {
-        $m = new AuthentificationModel();
+        $m = new AuthenticationModel();
         $data = $m->roles();
         $roles = array();
         //recover all rights
@@ -93,14 +130,10 @@ class AuthentificationController extends AppController
     /**
      *Login out
      */
-    public function logOut()
+    public function logout()
     {
-        session_destroy();
         $this->render('authentication');
-     /* echo '
-      <a href="/">Se connecter</a>
-      
-      ';*/
     }
 }
+
 

@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `intervention` (
   `Important` tinyint(1) NOT NULL,
   `Date_Debut` datetime NOT NULL,
   `Date_Fin` datetime NOT NULL,
-  `Adresse_ID` int(11) NOT NULL,
+  `Adresse` varchar(255) NOT NULL,
   `Type_ID` varchar(5) NOT NULL,
   `Requerant_ID` int(11) NOT NULL,
   `Responsable_ID` int(11) NOT NULL,
@@ -73,7 +73,6 @@ CREATE TABLE IF NOT EXISTS `intervention` (
   `Etat` varchar(64),
   PRIMARY KEY (`Intervention_ID`),
   KEY `Requerant_ID` (`Requerant_ID`),
-  KEY `Adresse_ID` (`Adresse_ID`),
   KEY `Type_ID` (`Type_ID`),
   KEY `Responsable_ID` (`Responsable_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -188,12 +187,15 @@ CREATE TABLE IF NOT EXISTS `vehicule` (
 
 DROP TABLE IF EXISTS `vehicule_role`;
 CREATE TABLE IF NOT EXISTS `vehicule_role` (
-  `vehicule_Code` varchar(10) NOT NULL,
+  `Vehicule_Code` varchar(10) NOT NULL,
   `Role_ID` int(11) NOT NULL,
+  `Role_Nom` varchar(64) NOT NULL,
   PRIMARY KEY (`vehicule_Code`,`Role_ID`),
   KEY `Role_ID` (`Role_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
+
+INSERT INTO requerant (Requerant_ID, Description) VALUES ("1", "Alerte locale"), ("2", "CODIS");
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

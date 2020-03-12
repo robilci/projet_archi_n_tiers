@@ -11,7 +11,7 @@ namespace App\controller;
      }
 
      public function getUser()
-     {   $Auth = new AuthentificationController();
+     {   $Auth = new AuthenticationController();
          $m = new UserModel();
          $user=$m->getUser($Auth->user('Droit_ID'));
         // $this->render('user.account',array($user));
