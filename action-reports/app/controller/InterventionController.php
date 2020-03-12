@@ -28,16 +28,17 @@ class InterventionController extends AppController {
      * @param $id
      */
 
-    public function listOne()
+    public function view($id)
     {
+        echo "Parametre id = ".$id; // Voila Dounya ! contente ?
         $interventionModel = new InterventionModel();
-        $responsable = $interventionModel->I_esponsable(1);
-        $vehicules = $interventionModel->I_vehicles(1);
-        $requerant = $interventionModel->I_requerant(1);
-        $pompiers = $interventionModel->I_pompiers(1);
-        $otherInfos=$interventionModel->I_otherInfos(1);
-        $this->render('intervention.single', ["responsable" => $responsable->fetch(\PDO::FETCH_OBJ), "listVehicles" => $vehicules->fetchAll(), "requerant" => $requerant->fetch(\PDO::FETCH_OBJ), "listPompiers" => $pompiers->fetchAll(), "otherInfos" => $otherInfos->fetch(\PDO::FETCH_OBJ)]);
+        $responsable = $interventionModel->I_esponsable($id);
+        $vehicules = $interventionModel->I_vehicles($id);
+        $requerant = $interventionModel->I_requerant($id);
+        $pompiers = $interventionModel->I_pompiers($id);
+        $otherInfos=$interventionModel->I_otherInfos($id);
 
+        $this->render('intervention.single', ["responsable" => $responsable->fetch(\PDO::FETCH_OBJ), "listVehicles" => $vehicules->fetchAll(), "requerant" => $requerant->fetch(\PDO::FETCH_OBJ), "listPompiers" => $pompiers->fetchAll(), "otherInfos" => $otherInfos->fetch(\PDO::FETCH_OBJ)]);
     }
 
     public function liste()
@@ -176,7 +177,9 @@ class InterventionController extends AppController {
         $model->createIntervention($_POST["interventionNumber"], $_POST["opm"], $_POST["important"], $_POST["beginDate"], $_POST["endDate"],
             $_POST["town"], $_POST["adress"], $_POST["type"], $_POST["applicant"], $_POST["responsible"],  mb_convert_encoding($_POST["comment"], "latin1", "UTF-8"), $vehicles, $roles, $firefighters);
 
-        $this->render("intervention.list", ["intervention" => true]);
+        $interventionModel= new InterventionModel();
+        $result = $interventionModel->lastTen();
+        $this->render('intervention.list',["listTen" => $result->fetchAll(), "intervention" => true]);
     }
 
     private function export_data_to_csv($data, $filename='export.csv', $delimiter = ';', $enclosure = '"') {

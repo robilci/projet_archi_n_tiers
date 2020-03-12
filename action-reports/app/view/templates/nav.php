@@ -11,12 +11,12 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown03">
                     <a class="dropdown-item" href="/intervention/create">Créer une intervention</a>
                     <a class="dropdown-item" href="#">Gérer les interventions</a>
-                    <a class="dropdown-item" href="/listInterventions">Visualiser les interventions</a>
+                    <a class="dropdown-item" href="/intervention/list">Visualiser les interventions</a>
                     <a class="dropdown-item" href="/intervention/exportation">Exporter mes interventions</a>
                 </div>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/list10Interventions">Accueil<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/intervention/ten">Accueil<span class="sr-only">(current)</span></a>
             </li>
 
 

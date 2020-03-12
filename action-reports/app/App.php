@@ -21,9 +21,9 @@ class App
         $router->get('/authentication', 'Index#authentication');
         $router->get('/intervention/create', 'Intervention#create');
         $router->post('/intervention/create/confirm', 'Intervention#confirm');
-        $router->get('/listInterventions', 'Intervention#liste');
-        $router->get('/list10Interventions', 'Intervention#lastTen');
-        $router->get('/oneIntervention', 'Intervention#listOne');
+        $router->get('/intervention/list', 'Intervention#liste');
+        $router->get('/intervention/ten', 'Intervention#lastTen');
+        $router->get('/intervention/:id', 'Intervention#view');
         $router->get('/intervention/exportation', 'Intervention#export');
 
         // For ajax requests

@@ -42,7 +42,7 @@ FROM intervention WHERE intervention.Intervention_ID=".$id;
         $query = "SELECT pompier.Nom,pompier.Prenom ,pompier_roles.Vehicule_Code,role.Name
 FROM pompier_roles 
 INNER JOIN pompier on pompier_roles.Pompier_ID=pompier.Pompier_ID
-INNER JOIN role on role.Role_ID=pompier_roles.Role_ID
+INNER JOIN role on role.Name = pompier_roles.Role
 WHERE pompier_roles.Intervention_ID=" . $id;
         $result = Database::getPDO()->query($query);
         //var_dump($result);
@@ -79,7 +79,6 @@ WHERE intervention.Intervention_ID=" . $id;
 on intervention.Responsable_ID=pompier.Pompier_ID
 WHERE intervention.Intervention_ID=" . $id;
         $result = Database::getPDO()->query($query);
-        //var_dump($result);
         return $result;
 
     }
