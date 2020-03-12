@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="38e03302-2962-40aa-9cf5-4df2804aa249" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action-reports/app/controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/action-reports/app/controller/IndexController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,11 +128,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1584018456843" />
-    <state x="426" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1584036241735">
+    <state x="426" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1584042212135">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582293641166" />
-    <state x="426" y="224" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584036241735" />
+    <state x="426" y="224" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584042212135" />
     <state x="580" y="352" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583935361518">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
