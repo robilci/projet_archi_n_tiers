@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4f3a884-f723-4eba-b6df-b7dbf28c176b" name="Default Changelist" comment="" />
+    <list default="true" id="38e03302-2962-40aa-9cf5-4df2804aa249" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +13,13 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +53,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b4f3a884-f723-4eba-b6df-b7dbf28c176b" name="Default Changelist" comment="" />
+      <changelist id="38e03302-2962-40aa-9cf5-4df2804aa249" name="Default Changelist" comment="" />
       <created>1582032002225</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -58,6 +67,24 @@
       <workItem from="1582202143783" duration="9246000" />
       <workItem from="1582211780958" duration="10139000" />
       <workItem from="1582293636461" duration="17678000" />
+      <workItem from="1582488000434" duration="908000" />
+      <workItem from="1583331857859" duration="407000" />
+      <workItem from="1583332284601" duration="6596000" />
+      <workItem from="1583417230533" duration="9601000" />
+      <workItem from="1583488626279" duration="4898000" />
+      <workItem from="1583508746266" duration="8183000" />
+      <workItem from="1583534441302" duration="119000" />
+      <workItem from="1583575078177" duration="19559000" />
+      <workItem from="1583753666387" duration="19648000" />
+      <workItem from="1583866844970" duration="1074000" />
+      <workItem from="1583868156559" duration="2795000" />
+      <workItem from="1583914323042" duration="2813000" />
+      <workItem from="1583928530512" duration="11564000" />
+      <workItem from="1583942077248" duration="1147000" />
+      <workItem from="1583944585659" duration="606000" />
+      <workItem from="1584016423364" duration="4031000" />
+      <workItem from="1584024579213" duration="626000" />
+      <workItem from="1584035464531" duration="225000" />
     </task>
     <servers />
   </component>
@@ -69,14 +96,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1582465945766" />
-    <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser" timestamp="1582461289746">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="549" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583333344921">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="488" y="81" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582461289746" />
-    <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582222094343">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="549" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1583333344921" />
+    <state x="410" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583579754983">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1582222094343" />
+    <state x="410" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1583579754983" />
     <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582454792345">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -85,17 +114,36 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582032633933" />
-    <state x="517" y="288" key="NewPhpFileDialog" timestamp="1582465669918">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="480" y="268" key="NewPhpClassDialog" timestamp="1583599286760">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="480" y="268" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1583599286760" />
+    <state x="581" y="342" key="NewPhpFileDialog" timestamp="1583332375167">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="517" y="288" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1582465669918" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582293641166">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="581" y="342" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1583332375167" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1584018456843">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1584018456843" />
+    <state x="426" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1584035470655">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582293641166" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1582095139437">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="426" y="224" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584035470655" />
+    <state x="580" y="352" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583935361518">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="580" y="352" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1583935361518" />
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup" timestamp="1583932005967">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" width="672" height="677" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1583932005967" />
+    <state x="389" y="58" width="756" height="805" key="search.everywhere.popup" timestamp="1583942784496">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1582095139437" />
+    <state x="389" y="58" width="756" height="805" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1583942784496" />
   </component>
 </project>
