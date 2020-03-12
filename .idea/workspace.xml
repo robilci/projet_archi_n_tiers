@@ -35,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/projet_archi_n_tiers" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -86,6 +86,8 @@
       <workItem from="1584016423364" duration="4031000" />
       <workItem from="1584024579213" duration="626000" />
       <workItem from="1584035464531" duration="225000" />
+      <workItem from="1584038245208" duration="610000" />
+      <workItem from="1584038874821" duration="740000" />
     </task>
     <servers />
   </component>
@@ -111,10 +113,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1582454792345" />
-    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1582476662285">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1584038920917">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582032633933" />
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584038920917" />
     <state x="480" y="268" key="NewPhpClassDialog" timestamp="1583599286760">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

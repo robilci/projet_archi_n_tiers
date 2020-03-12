@@ -89,8 +89,8 @@
 							<td><?php echo $val[7] ?></td>
 							
 						
-							
-                            <td><p data-placement="top" data-toggle="tooltip" title="View"><a class="btn btn-info btn-xs" data-title="View" data-toggle="modal" data-target="#view" href=""><span class="glyphicon glyphicon-eye-open"></span></a></p></td>
+
+                            <td><p data-placement="top" data-toggle="tooltip" title="View"><a class="btn btn-info btn-xs" data-title="View" data-toggle="modal" data-target="#view" href="oneIntervention"><span class="glyphicon glyphicon-eye-open"></span></a></p></td>
                         </tr>
 	<?php } } ?>
 	
@@ -115,7 +115,7 @@
 							
 						
 							
-                            <td><p data-placement="top" data-toggle="tooltip" title="View"><a class="btn btn-info btn-xs" data-title="View" data-toggle="modal" data-target="#view" href=""><span class="glyphicon glyphicon-eye-open"></span></a></p></td>
+                            <td><p data-placement="top" data-toggle="tooltip" title="View"><a class="btn btn-info btn-xs" data-title="View" data-toggle="modal" data-target="#view" href="oneIntervention"><span class="glyphicon glyphicon-eye-open"></span></a></p></td>
                         </tr>
 	<?php } } ?>
                     </tbody>
