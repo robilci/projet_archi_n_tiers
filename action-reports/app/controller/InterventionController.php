@@ -50,7 +50,6 @@ class InterventionController extends AppController {
     {
         $interventionModel = new InterventionModel();
         $result = $interventionModel->liste();
-        //var_dump($result->fetchAll());
         $this->render('intervention.list', ["listIntervention" => $result->fetchAll()]);
     }
 

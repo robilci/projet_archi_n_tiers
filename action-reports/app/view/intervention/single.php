@@ -7,6 +7,7 @@
                 </div>
                 <div class="col-md-8" id="overview">
                     <?php
+
                     if(isset($otherInfos))
                     {
                         ?>

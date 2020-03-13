@@ -80,18 +80,16 @@
 							
 						?>
 						    <tr>
-                            <td><?php echo $val[0] ?></td>
                             <td><?php echo $val[1] ?></td>
                             <td><?php echo $val[2] ?></td>
                             <td><?php echo $val[3] ?></td>
-							<td><?php echo $val[4] ?></td>
+                            <td><?php echo $val[4] ?></td>
 							<td><?php echo $val[5] ?></td>
-                            <td><?php echo $val[6] ?></td>
-							<td><?php echo $val[7] ?></td>
-							
-						
+							<td><?php echo $val[6] ?></td>
+                            <td><?php echo $val[7] ?></td>
+							<td><?php echo $val[8] ?></td>
 
-                            <td><a class="" href="<?= '/intervention/'.$val[0] ?>" ><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                            <td><a class="btn btn-info" href="<?= '/intervention/'.$val[0] ?>" ><span class="glyphicon glyphicon-eye-open"></span></a></td>
                         </tr>
 	<?php } } ?>
 	
@@ -105,17 +103,17 @@
 							
 						?>
 						    <tr>
-                            <td><?php echo $val[0] ?></td>
                             <td><?php echo $val[1] ?></td>
                             <td><?php echo $val[2] ?></td>
                             <td><?php echo $val[3] ?></td>
-							<td><?php echo $val[4] ?></td>
+                            <td><?php echo $val[4] ?></td>
 							<td><?php echo $val[5] ?></td>
-                            <td><?php echo $val[6] ?></td>
-							<td><?php echo $val[7] ?></td>
+							<td><?php echo $val[6] ?></td>
+                            <td><?php echo $val[7] ?></td>
+							<td><?php echo $val[8] ?></td>
 
 
-                                <td><a class="" href="<?= '/intervention/'.$val[0] ?>" ><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                                <td><a class="btn btn-info" href="<?= '/intervention/'.$val[0] ?>" ><span class="glyphicon glyphicon-eye-open"></span></a></td>
                         </tr>
 	<?php } } ?>
                     </tbody>

@@ -21,10 +21,9 @@ class InterventionModel extends AppModel {
             session_start();
         }
         $query = "SELECT intervention.OPM ,intervention.Important ,intervention.Numero,intervention.Date_Debut,intervention.Date_Fin,
-intervention.Adresse,intervention.Commentaire,intervention.Etat
-FROM intervention WHERE intervention.Intervention_ID=".$id;
-        $result = Database::getPDO()->query($query);
-        //var_dump($result);
+            intervention.Adresse,intervention.Commentaire,intervention.Etat
+            FROM intervention WHERE intervention.Intervention_ID=".$id;
+                    $result = Database::getPDO()->query($query);
         return $result;
 
     }
@@ -39,13 +38,12 @@ FROM intervention WHERE intervention.Intervention_ID=".$id;
         if (!isset($_SESSION)) {
             session_start();
         }
-        $query = "SELECT pompier.Nom,pompier.Prenom ,pompier_roles.Vehicule_Code,role.Name
-FROM pompier_roles 
-INNER JOIN pompier on pompier_roles.Pompier_ID=pompier.Pompier_ID
-INNER JOIN role on role.Name = pompier_roles.Role
-WHERE pompier_roles.Intervention_ID=" . $id;
+        $query = "SELECT pompier.Nom, pompier.Prenom, pompier_roles.Vehicule_Code, role.Name
+                FROM pompier_roles 
+                INNER JOIN pompier on pompier_roles.Pompier_ID=pompier.Pompier_ID
+                INNER JOIN role on role.Name = pompier_roles.Role
+                WHERE pompier_roles.Intervention_ID=" . $id;
         $result = Database::getPDO()->query($query);
-        //var_dump($result);
         return $result;
     }
 
@@ -62,7 +60,6 @@ WHERE pompier_roles.Intervention_ID=" . $id;
 INNER JOIN requerant on requerant.Requerant_ID=intervention.Requerant_ID
 WHERE intervention.Intervention_ID=" . $id;
         $result = Database::getPDO()->query($query);
-        //var_dump($result);
         return $result;
     }
 
@@ -104,7 +101,6 @@ INNER JOIN vehicule on vehicule.Vehicule_Code=intervention_vehicule.Vehicule_Cod
 INNER JOIN vehicule_role on intervention_vehicule.Vehicule_Code=vehicule_role.Vehicule_Code
 WHERE intervention.Intervention_ID=" . $id;
         $result = Database::getPDO()->query($query);
-        //var_dump($result);
         return $result;
     }
 
@@ -118,7 +114,6 @@ WHERE intervention.Intervention_ID=" . $id;
 					INNER JOIN pompier ON pompier.Pompier_ID = intervention.Responsable_ID
 					WHERE pompier.Pompier_ID = " . $_SESSION["id"];
         $result = Database::getPDO()->query($query);
-        //var_dump($result);
         return $result;
     }
 
@@ -185,15 +180,14 @@ WHERE intervention.Intervention_ID=" . $id;
 		{
 			session_start();
 		}
-	 $query ="SELECT Numero, Date_Debut, Date_Fin, Adresse, pompier.Nom,pompier.Prenom, Commentaire,Etat 
-FROM intervention 
-INNER JOIN pompier ON pompier.Pompier_ID = intervention.Responsable_ID 
-WHERE pompier.Pompier_ID = ".$_SESSION["id"]."
-ORDER By intervention.Date_Fin DESC
-LIMIT 10";
+	 $query ="SELECT Intervention_ID, Numero, Date_Debut, Date_Fin, Adresse, pompier.Nom,pompier.Prenom, Commentaire,Etat 
+            FROM intervention 
+            INNER JOIN pompier ON pompier.Pompier_ID = intervention.Responsable_ID 
+            WHERE pompier.Pompier_ID = ".$_SESSION["id"]."
+            ORDER By intervention.Date_Fin DESC
+            LIMIT 10";
 
     $result = Database::getPDO()->query($query);
-		//var_dump($result);
 		return $result;
 
     }
