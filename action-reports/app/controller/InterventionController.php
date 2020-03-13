@@ -30,7 +30,7 @@ class InterventionController extends AppController {
 
     public function view($id)
     {
-        echo "Parametre id = ".$id; // Voila Dounya ! contente ?
+
         $interventionModel = new InterventionModel();
         $responsable = $interventionModel->I_esponsable($id);
         $vehicules = $interventionModel->I_vehicles($id);
@@ -38,7 +38,12 @@ class InterventionController extends AppController {
         $pompiers = $interventionModel->I_pompiers($id);
         $otherInfos=$interventionModel->I_otherInfos($id);
 
-        $this->render('intervention.single', ["responsable" => $responsable->fetch(\PDO::FETCH_OBJ), "listVehicles" => $vehicules->fetchAll(), "requerant" => $requerant->fetch(\PDO::FETCH_OBJ), "listPompiers" => $pompiers->fetchAll(), "otherInfos" => $otherInfos->fetch(\PDO::FETCH_OBJ)]);
+        $this->render('intervention.single',
+            ["responsable" => $this->convert_from_latin1_to_utf8_recursively($responsable->fetch(\PDO::FETCH_OBJ)),
+            "listVehicles" => $this->convert_from_latin1_to_utf8_recursively($vehicules->fetchAll()),
+            "requerant" => $this->convert_from_latin1_to_utf8_recursively($requerant->fetch(\PDO::FETCH_OBJ)),
+            "listPompiers" => $this->convert_from_latin1_to_utf8_recursively($pompiers->fetchAll()),
+            "otherInfos" => $this->convert_from_latin1_to_utf8_recursively($otherInfos->fetch(\PDO::FETCH_OBJ))]);
     }
 
     public function liste()

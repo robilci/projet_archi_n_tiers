@@ -23,7 +23,9 @@ class App
         $router->post('/intervention/create/confirm', 'Intervention#confirm');
         $router->get('/intervention/list', 'Intervention#liste');
         $router->get('/intervention/ten', 'Intervention#lastTen');
-        $router->get('/intervention/:id', 'Intervention#view');
+        $router->get('/intervention/:id', 'Intervention#view')->with("id", '[0-9]+');
+        
+        
         $router->get('/intervention/exportation', 'Intervention#export');
 
         // For ajax requests

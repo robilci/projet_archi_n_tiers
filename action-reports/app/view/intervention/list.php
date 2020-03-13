@@ -68,7 +68,8 @@
 					<th>Visualiser</th>
                     </thead>
                     <tbody>
-                    
+
+
 						<?php if(isset($listIntervention))
 							{
 							
@@ -90,7 +91,7 @@
 							
 						
 
-                            <td><p data-placement="top" data-toggle="tooltip" title="View"><a class="btn btn-info btn-xs" data-title="View" data-toggle="modal" data-target="#view" href="oneIntervention"><span class="glyphicon glyphicon-eye-open"></span></a></p></td>
+                            <td><a class="" href="<?= '/intervention/'.$val[0] ?>" ><span class="glyphicon glyphicon-eye-open"></span></a></td>
                         </tr>
 	<?php } } ?>
 	
@@ -112,10 +113,9 @@
 							<td><?php echo $val[5] ?></td>
                             <td><?php echo $val[6] ?></td>
 							<td><?php echo $val[7] ?></td>
-							
-						
-							
-                            <td><p data-placement="top" data-toggle="tooltip" title="View"><a class="btn btn-info btn-xs" data-title="View" data-toggle="modal" data-target="#view" href="oneIntervention"><span class="glyphicon glyphicon-eye-open"></span></a></p></td>
+
+
+                                <td><a class="" href="<?= '/intervention/'.$val[0] ?>" ><span class="glyphicon glyphicon-eye-open"></span></a></td>
                         </tr>
 	<?php } } ?>
                     </tbody>
